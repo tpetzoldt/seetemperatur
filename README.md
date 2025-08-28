@@ -4,8 +4,12 @@
 ## Projektseite für eine Selbstbau-Temperatursonde zur Erfassung der Schichtung von Seen
 
 * Liste der Bauteile
-* Detaillierte Bauanleitung
+* Detaillierte [Bauanleitung](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
 * C++ Sketch für die Arduino-Umgebung
+
+## Programmcode
+
+* [Temperatursensor und und Display](code/t-sensor-display/)
 
 ## Weiterführende Links
 

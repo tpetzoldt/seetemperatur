@@ -1,6 +1,7 @@
 ---
 title: "Bauanleitung"
 format: html
+embed-resources: true
 ---
 
 ## Benötigte Bauteile
