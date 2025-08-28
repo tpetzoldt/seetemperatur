@@ -1,0 +1,55 @@
+---
+title: "Bauanleitung"
+format: html
+---
+
+## Benötigte Bauteile
+
+* Heltec 8266 WiFi Kit 8 oder vergleichbar
+* DS18B20 mit Kabel
+* Widerstand 4,7kOhm
+* Schrumpfschlauch, verschiedene Größen
+* Steckbrett
+* Lötkolben, Lötzinn 0.5mm bleifrei
+* Plexiglasrohr, Duchmesser xx, Länge 12cm
+* PVC oder Plexiglas für Abschlussstopfen
+* Silikon zur Abdichtung
+* USB-Kabel für Stromversorgung und Programmierung
+* optional: Steckverbinder 3polig
+
+## Steckbrettaufbau
+
+## Einfaches Gehäuse
+
+* nur 3 Lötpunkte erforderlich, deshalb freie Verdrahtung gewählt
+* Sensor kann direkt oder über einen Steckverbinder mit dem Controller verbunden werden
+* Steckverbinder sollte verpolungssicher sein
+
+
+
+## Programmierung
+
+### Installation des Boards
+
+- Eintellung COM-Port
+
+### Installation der Bibliotheken
+
+### Upload des C++ Sketches
+
+### Test
+
+* Terminal
+
+## Weitere Möglichkeiten
+
+* WiFi
+* Datenloggerfunktion
+
+
+
+## Hinweis zur Powerbank
+
+Die Sonde benötigt nur sehr wenig Strom. Deshalb gehen manche Powerbanks nach kurzer zeit in den Stromsparmodus.
+Falls das auftritt, kann man zwischen 5V und Masse einen Widerstand als "künstlichen Verbraucher" einfügen, z.B. 47 Ohm. Kleinere Widerstände (10 Ohm) können gegebenenfalls heiß werden, größere (z.B. 100 Ohm) eventuell nicht genügen.
+
