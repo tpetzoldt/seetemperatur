@@ -5,8 +5,11 @@
 
 * Liste der Bauteile
 * Detaillierte Bauanleitung
-* C++ Sketch für die Arduni-Umgebung
-* Weiterführende Links
+* C++ Sketch für die Arduino-Umgebung
+
+## Weiterführende Links
+
+* Arduino-Programmierungebung: https://www.arduino.cc/
 
 ## Literatur
 
