@@ -4,21 +4,76 @@ format: html
 embed-resources: true
 ---
 
+## Einführung
+
+Im Folgenden wird eine Messsonde beschrieben, mit der die Temperaturschichtung 
+in einem See oder Teich gemessen werden kann.
+
+Es handelt sich um einen Schulprojekt für die gymnasiale Oberstufe. Im Prinzip 
+ähnelt der Versuchsaufbau einem  digitalen Thermometer, wie es zum Beispiel
+in der Küche verwendet werden kann. Der Hauptunterschied besteht darin, dass
+der Temperatursensor mit einem längeren Kabel (3m, 10m oder länger) mit der Mess- und 
+Anzeigeeinheit verbunden wird. Das Kabel wird mit wasserfestem Klebestreifen in 
+20 oder 50cm-Abständen markiert, so dass man direkt in verschiedenen Tiefen 
+messen kann, ohne das Wasser mit einem Wasserschöpfer nach oben holen zu müssen.
+
+Im Projekt sollen unterschiedliche Fähigkeiten geschult werden: Programm, 
+Elektronik, handwerkliches Geschick und am Ende natürlich die Gewässerökologie.
+
+Das Projekt ist bewusst auf Einfachheit angelegt. Es werden nur wenige Bauteile 
+benötigt, es sind nur sehr wenige Lötstellen und als Gehäuse nutzen wir ein Stück
+Plexiglasrohr. Natürlich kann man einiges besser machen. 
+Andererseits lassen sich nicht alle Klippen vermeiden, insbesondere das 
+Einrichten der Entwicklungsumgebung, der Umgang mit dem Lötkolben und der Bau
+eines einfachen Gehäuses.
+
+Das wird im Folgenden hier beschrieben.
+
+
 ## Benötigte Bauteile
 
 * Heltec 8266 WiFi Kit 8 oder vergleichbar
-* DS18B20 mit Kabel
+* DS18B20 mit Kabel (z.B. 3m oder 10m)
 * Widerstand 4,7kOhm
 * Schrumpfschlauch, verschiedene Größen
 * Steckbrett
-* Lötkolben, Lötzinn 0.5mm bleifrei
+* Lötkolben, Lötzinn 0.5mm, bleifrei
 * Plexiglasrohr, Duchmesser xx, Länge 12cm
 * PVC oder Plexiglas für Abschlussstopfen
 * Silikon zur Abdichtung
 * USB-Kabel für Stromversorgung und Programmierung
 * optional: Steckverbinder 3polig
 
-## Steckbrettaufbau
+## Werkzeuge
+
+Elektroniklötkolben-Set, Maßband, Haltehilfe
+
+
+## Steckbrettaufbau und Programmierung
+
+Je nach Vorkenntnissen empfiehlt es sich, Schaltung und Software zunächst in 
+einer Experimentierumgebung zu testen, auf einem sogenannten Steckbrett (Breadboard).
+
+Damit ...............
+
+### Vorbereitung des Mikrocontrollers
+
+Für das Projekt verwenden wir ein Mikrocontroller-Entwicklungsboard mit 
+integriertem Display, den  "Heltec WiFi Kit 8" mit dem in der Bastlerszene sehr 
+verbreiteten ESP 8266 Chip. 
+Im Prinzip lassen sich auch andere Mikrocontroller verwenden, allerdings benötigt 
+man dann noch ein separates Display und etwas mehr Lötarbeit.
+
+Die erste Herausforderung beim WiFi Kit 8 ist, dass man zunächst eine 
+Stiftleiste anlöten muss.
+
+
+
+
+### Vorbereitung der Arduino-Umgebung
+
+
+
 
 ## Einfaches Gehäuse
 
