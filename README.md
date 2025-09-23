@@ -3,17 +3,17 @@
 
 ## Projektseite für eine Selbstbau-Temperatursonde zur Erfassung der Schichtung von Seen
 
-* Liste der Bauteile
+Dieses Repository enthält ergänzendes Material zum Bauvorschlag "Temperatursonde für Seen" aus dem Zeitschriftenartigel in "Unterricht Biologie kompakt". 
+Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben finden Sie im Zeitschriftenartikel.
+
+## Bauanleitung und Programmcode
+
 * Detaillierte [Bauanleitung](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
-* C++ Sketch für die Arduino-Umgebung
-
-## Programmcode
-
 * [Temperatursensor und und Display](code/t-sensor-display/) (Arduino-Sketch)
 
 ## Daten
 
-* [Temperaturmessungen im Versuchsteich](data/versuchsteich-jun2023-10min.xlsx) (Microsoft xlsx-Datei)
+* [Temperaturmessungen im Versuchsteich](daen/versuchsteich-jun2023-10min.xlsx) (Microsoft xlsx-Datei)
 
 ## Lizenz
 
