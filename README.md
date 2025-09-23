@@ -13,7 +13,7 @@ Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hint
 
 ## Daten
 
-* [Temperaturmessungen im Versuchsteich](daen/versuchsteich-jun2023-10min.xlsx) (Microsoft xlsx-Datei)
+* [Temperaturmessungen im Versuchsteich](daten/versuchsteich-jun2023-10min.xlsx) (Microsoft xlsx-Datei)
 
 ## Lizenz
 
