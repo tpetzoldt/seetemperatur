@@ -9,29 +9,30 @@ embed-resources: true
 
 Eine Do-It-Yourself (DIY)-Sonde zur Erfassung der thermischen Schichtung von Seen
 
-Dieses Repository enthält ergänzendes Material zum Bauvorschlag "Temperatursonde für Seen" aus dem Zeitschriftenartigel in "Unterricht Biologie kompakt". 
-Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben finden Sie im Zeitschriftenartikel (in Vorbereitung).
+Dieses Repository enthält ergänzendes Material zum Bauvorschlag "Temperatursonde für Seen" für den  Zeitschriftenartikel in "Unterricht Biologie kompakt". 
+Das Repository beschränkt sich auf die technischen Aspekte.
+Die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben finden Sie im Zeitschriftenartikel (in Vorbereitung).
 
 ## Bauanleitung, Programmcode und Beispieldatensatz
 
 * Detaillierte [**Bauanleitung**](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
-* Code für einen [Temperatursensor mit Display](https://github.com/tpetzoldt/seetemperatur/code/t-sensor-display/) (Arduino-Sketch)
-* Beispieldatensatz: [Temperaturmessungen im Versuchsteich](https://github.com/tpetzoldt/seetemperatur/daten/) (versuchsteich-jun2023-10min.xlsx)
+* Code für einen [Temperatursensor mit Display](https://github.com/tpetzoldt/seetemperatur/tree/main/code/t-sensor-display/) (Arduino-Sketch)
+* Beispieldatensatz: [Temperaturmessungen im Versuchsteich](https://github.com/tpetzoldt/seetemperatur/tree/main/daten) (versuchsteich-jun2023-10min.xlsx)
 
 ## Lizenz
 
-* Dokumente, Daten, Programmcode und Fotos in diesem Web-Repository dienen zur Ergänzung des Zeitschriftenbeitrags. Sie können im Unterschied dazu frei entsprechend der Creative Commons Lizenz CC-BY 4.0 genutzt werden.
+* Dokumente, Daten, Programmcode und Fotos in diesem Web-Repository dienen zur Ergänzung des Zeitschriftenbeitrags. Sie können im Unterschied zum gedruckten Heft entsprechend der Creative Commons Lizenz CC-BY 4.0 frei genutzt werden.
 * Im Interesse der Kompatibilität der Codebeispiele mit GPL-lizensiertem Code stehen die Inhalte zusätzlich unter einer Dual-Lizenz. 
   Sie können frei entscheiden ob Sie die [GPL 2.0](https://www.gnu.de/documents/gpl-2.0.de.html), die [GPL 3.0](https://www.gnu.de/documents/gpl-3.0.de.html) oder die permissivere [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de) anwenden möchten.
 * In der Praxis erlauben alle genannten Lizenzen eine freie Nutzung unter fairen Bedingungen und erfordern eine Quellenangabe.
-* Für die im zugehörigen Zeitschriftenartikel enthaltenen Texte und Abbildungen gilt im Unterschied dazu das Copyright des Verlags.
+* Für die im gedruckten Zeitschriftenartikel enthaltenen Texte und Abbildungen gilt im Unterschied dazu das Copyright des [Friedrich Verlags](https://www.friedrich-verlag.de/).
 
 
 ## Weblinks und Literatur
 
 ### Didaktisches Material
 
-* Unterricht Biologie kompakt ...(Zeitschriftenheft in Vorbereitung)
+* [Unterricht Biologie kompakt](https://www.friedrich-verlag.de/shop/sekundarstufe/biologie/fachzeitschriften/unterricht-biologie) ...(Zeitschriftenheft in Vorbereitung)
 
 ### Mikrocontroller-Programmierung
 

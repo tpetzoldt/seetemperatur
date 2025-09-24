@@ -9,30 +9,23 @@ embed-resources: true
 
 ## Einführung
 
-Im Folgenden wird eine Messsonde beschrieben, mit der die Temperaturschichtung 
-in einem See oder Teich gemessen werden kann.
+Im Folgenden wird eine Messsonde beschrieben, mit der die Temperaturschichtung in einem See oder Teich gemessen werden kann.
 
-Es handelt sich um einen Schulprojekt für die gymnasiale Oberstufe. Im Prinzip 
-ähnelt der Versuchsaufbau einem  digitalen Thermometer, wie es zum Beispiel
-in der Küche verwendet werden kann. Der Hauptunterschied besteht darin, dass
-der Temperatursensor mit einem längeren Kabel (3m, 10m oder länger) mit der Mess- und 
-Anzeigeeinheit verbunden wird. Das Kabel wird mit wasserfestem Klebestreifen in 
-20 oder 50cm-Abständen markiert, so dass man direkt in verschiedenen Tiefen 
-messen kann, ohne das Wasser mit einem Wasserschöpfer nach oben holen zu müssen.
+Es handelt sich um einen Schulprojekt für die gymnasiale Oberstufe.
+Im Prinzip  ähnelt der Versuchsaufbau einem digitalen Thermometer, wie es zum Beispiel in der Küche verwendet werden kann.
+Der Hauptunterschied besteht darin, dass der Temperatursensor mit einem längeren Kabel (3m, 10m oder länger) mit der Mess- und Anzeigeeinheit verbunden wird.
+Das Kabel wird mit wasserfestem Klebestreifen in 20 oder 50cm-Abständen markiert, so dass man direkt in verschiedenen Tiefen messen kann, ohne das Wasser mit einem Wasserschöpfer nach oben holen zu müssen.
 
 Im Projekt sollen unterschiedliche Fähigkeiten geschult werden: Programmieren, 
 etwas Elektronik, handwerkliches Geschick und am Ende natürlich die Gewässerökologie.
 
-Das Messen der Temperatur gehört zu den Standardprojekten der Ardunio-Szene mit einer unzähligen Menge Anleitungen und Videos. Wir sind uns bewusst, dass das Projekt einige Herausforderungen beinhaltet, deshalb
-ist es bewusst auf Einfachheit angelegt. Es werden nur wenige Bauteile 
-benötigt, es sind nur sehr wenige Lötstellen und als Gehäuse nutzen wir ein Stück
-Plexiglasrohr. Natürlich kann man einiges besser machen. 
+Das Messen der Temperatur gehört zu den Standardprojekten der Elektronikbastelszene mit einer unzähligen Menge Anleitungen und Videos.
+Trotzdem bietet das Projekt einige Herausforderungen, deshalb ist es bewusst möglichst einfach angelegt.
+Es werden nur wenige Bauteile benötigt, es sind nur sehr wenige Lötstellen und als Gehäuse nutzen wir ein Stück Plexiglasrohr.
+Natürlich kann man vieles besser machen. 
 
-Andererseits lassen sich nicht alle Klippen vermeiden, insbesondere das 
-Einrichten der Entwicklungsumgebung, der Umgang mit dem Lötkolben und der Bau
-eines einfachen Gehäuses. Je nach Vorkenntnissen ist es sinnvoll, Rat und 
-Kooperationen zu suchen, z.B. beim Informatiklehrer, einer Elektronik- und 
-Robotik-Arbeitsgemeinschaft oder einem [**FabLab bzw. Makerspace**](https://de.wikipedia.org/wiki/FabLab).
+Andererseits lassen sich nicht alle Klippen vermeiden, insbesondere das Einrichten der Entwicklungsumgebung, der Umgang mit dem Lötkolben und der Bau eines einfachen Gehäuses.
+Je nach Vorkenntnissen ist es sinnvoll, Rat und Kooperationen zu suchen, z.B. beim Informatiklehrer, einer Elektronik- und Robotik-Arbeitsgemeinschaft oder einem [**FabLab bzw. Makerspace**](https://de.wikipedia.org/wiki/FabLab).
 
 
 ## Vorbereitung
@@ -44,16 +37,17 @@ Robotik-Arbeitsgemeinschaft oder einem [**FabLab bzw. Makerspace**](https://de.w
 * DS18B20 mit Kabel (z.B. 3m oder 10m)
 * Widerstand 4,7kOhm
 * Steckbrett und Verbindungsleitungen
-* Lötkolben, Lötzinn 0.5mm, bleifrei
 * Schrumpfschlauch, verschiedene Größen
 * Plexiglasrohr, Duchmesser xx, Länge 12cm
 * Material für Abschlussstopfen, z.B. Plexiglas, PVC oder Holz
 * Silikon zur Abdichtung
+* Wasserfestes Klebeband, z.B. Duct Tape
 * optional: Steckverbinder 3polig
 
 ### Werkzeuge
 
-* Elektroniklötkolben-Set, Haltehilfe ("3. Hand")
+* Elektroniklötkolben mit Ständer, Lötzinn 0.5mm, bleifrei
+* Lötkolbenreiniger (Schwamm oder Messingwolle), Haltehilfe ("3. Hand")
 * Seitenschneider oder Kombizange
 * Maßband für die Markierung des Kabels
 * optional: Multimeter
@@ -61,28 +55,19 @@ Robotik-Arbeitsgemeinschaft oder einem [**FabLab bzw. Makerspace**](https://de.w
 
 ### Anlöten der Stiftleisten
 
-Je nach Vorkenntnissen empfiehlt es sich, Schaltung und Software zunächst in 
-einer Experimentierumgebung zu testen, auf einem sogenannten Steckbrett (Breadboard). 
+Je nach Vorkenntnissen empfiehlt es sich, Schaltung und Software zunächst in  einer Experimentierumgebung zu testen, auf einem sogenannten Steckbrett (Breadboard). 
 Wenn alles funktioniert, erfolgt der finale Aufbau üblicherweise auf einer Leiterplatte.
+Da im vorliegenden Fall nur drei Anschlüsse benötigt werden, kann auf eine Leiterplatte verzichtet werden. 
 
-Da im vorliegenden Fall nur drei Anschlüsse benötigt werden, kann auf eine 
-Leiterplatte verzichtet werden. 
+Für das Projekt verwenden wir ein Mikrocontroller-Entwicklungsboard (MC-Board) mit USB-Anschluss und integriertem Display, das "Heltec WiFi Kit 8" mit dem in der Bastlerszene sehr verbreiteten ESP 8266 Chip. 
 
-Da man für das Steckbrett Pinleisten benötigt werden, für die endgültige Schaltung 
-jedoch nicht, empfielt es sich, einen Dreierpack Mikrocontroller zu kaufen. Einen für
-den Steckbrettaufbau, einen für die endgültige Schaltung und einen als Reserve.
+Das Heltec WiFi Kit 8 wird unverlötet geliefert. Wir müssen deshalb zunächst die Stiftleisten anlöten. Hierzu findet man auf Youtube zahlreiche Video-Anleitungen.
+Gegebenenfalls ist es sinnvoll, zunächst etwas mit einem Stück Lochrasterplatte zu üben oder sich von einem erfahrenen Bastler helfen zu lassen.
 
-Für das Projekt verwenden wir ein Mikrocontroller-Entwicklungsboard mit 
-integriertem Display, den  "Heltec WiFi Kit 8" mit dem in der Bastlerszene sehr 
-verbreiteten ESP 8266 Chip. 
-Im Prinzip lassen sich auch andere Mikrocontroller verwenden, allerdings benötigt 
-man dann noch ein separates Display und etwas mehr Lötarbeit.
+Da man für das Steckbrett ein Mikrocontroller mit Stiftleisten benötigt, für die endgültige Schaltung jedoch ohne, empfiehlt es sich, einen Dreierpack Mikrocontroller zu kaufen: einen für den Steckbrettaufbau, einen für die endgültige Schaltung und einen als Reserve.
 
+Im Prinzip lassen sich auch andere Mikrocontroller verwenden, allerdings benötigt man dann noch ein separates Display und hat etwas mehr Lötarbeit.
 
-Das Heltec WiFi Kit 8 wird unverlötet geliefert. Wir müssen deshalb zunächst die
-Stiftleisten anlöten. Hierzu findet man auf Youtube zahlreiche Anleitungen. 
-Gegebenenfalls ist es sinnvoll, zunächst etwas mit einer Lochrasterplatte zu üben oder
-sich von einem erfahrenen Bastler helfen zu lassen.
 
 
 ### Vorbereitung der Arduino-Umgebung
@@ -92,10 +77,11 @@ Zum Programmieren des MC werden zwei unterschiedliche Arten von Software benöti
 1. Ein Programm zum Erfassen der Daten und zur Ansteuerng des Displays, ein sogenanntes "Sketch".
 2. Eine Programmierumgebung zur Erstellung dieses Programm und um es auf den MC zu schreiben.
 
-Als Programmierumgebung verwenden wir die frei erhältliche [Arduino IDE](https://www.arduino.cc/en/software/).
-Um die Arduino IDE für ein ESP 8266-Board, z.B. das WiFi Kit 8 zu verwenden, installieren
-wir einen zusätzlichen Boardverwalter (@fig-arduino-install-board). Die Details dazu sind auf diversen Internetseiten zu finden,
-bei manchen Online-Händlern für den Mikrocontroller eine passende Anleitung oder ein kleines Ebook erhältlich.
+Als Programmierumgebung verwenden wir die frei erhältliche [Arduino IDE](https://www.arduino.cc/en/software/). Beim Arduino handelt es sich um eine Familie von MC-Boards, die besonders einsteigerfreundlich sind.
+Um die Arduino IDE auch für andere MC-Boards zu verwenden, z.B. das WiFi Kit 8, kann man
+eine zusätzliche Boardverwalter-URL eintragen (@fig-arduino-install-board). 
+Für das WiFi Kit 8 benötigt man einen Boardverwalter für die ESP 8266-Prozessorfamilie.
+Die Details dazu sind auf diversen Internetseiten zu finden, bei manchen Online-Händlern für den Mikrocontroller eine passende Anleitung oder ein Ebook erhältlich.
 
 **Vorgehensweise**
 
@@ -114,7 +100,7 @@ bei manchen Online-Händlern für den Mikrocontroller eine passende Anleitung od
 
 ![](fig/arduino-install-board.png)
 
-Installation der URL für ESP 8266-Boards. Anschließend muss man den Download in der Arduino IDE bestätigen.
+Installation der Boardverwalter-URL für ESP 8266-Boards. Anschließend muss man den Download in der Arduino IDE bestätigen.
 
 :::
 
@@ -128,12 +114,13 @@ Wichtig ist, dass die Stifte des MC eine gute elektrische Verbindung haben. Es i
 des MC nicht zu tief ins Steckbrett zu pressen. Gegebenenfalls misst man mit einem Multimeter nach,
 dass am Temperatursensor eine Spannung von 3,3V anliegt. Das USB-Kabel liefert 5V Spannung vom Rechner bzw. aus der Powerbank. Der interne Spannungsregler des Boards konvertiert diese zur Versorgungsspannung von 3,3V für das Board.
 
-Als Temperatursensor verwendet man für den Steckbrettaufbau am besten einen DS18B20-Sensor
-ohne Kabel. Bei einem Sensor mit Kabel muss man zunächst eine Stiftleiste 
-mit 3 Pins anlöten.
+Als Temperatursensor verwendet man für den Steckbrettaufbau am besten einen DS18B20-Sensor ohne Kabel.
+Bei einem Sensor mit Kabel muss man zunächst eine Stiftleiste mit 3 Pins anlöten.
 
-Wichtig: Der DS18B20 ist nicht vor Verpolung geschützt, deshalb unbedingt richtig herum einsetzen!
-Wenn man Plus und Minus vertauscht, wird der Sensor heiß und kann beschädigt werden.
+**Wichtig**
+
+* Der DS18B20 ist nicht vor Verpolung geschützt, deshalb unbedingt richtig herum einsetzen!
+* Wenn man Plus und Minus vertauscht, wird der Sensor heiß und kann beschädigt werden.
 
 Die Kabel werden wie in @fig-t-sensor-breadboard geschaltet. Hierfür werden drei 
 Verbindungsleitungen benötigt:
@@ -142,10 +129,9 @@ Verbindungsleitungen benötigt:
 * Pluspol (3.3V)
 * Signalleitung an Pin D1
 
-Verbindungskabel sind im mit Breadboards im Set erhältlich. Alternativ genügt 
-Klingeldraht mit einem Durchmesser von ca. 0.32mm.
+Verbindungskabel sind mit Breadboards im Set erhältlich. Alternativ genügtKlingeldraht mit einem Durchmesser von ca. 0.32mm.
 
-Damit die Signalleitung definierten Wert hat, wird zwischen Signalleitung und Pluspol ein sogenannter Pullup-Widerstand von standardmäßig 4,7 kOhm geschaltet. Das WiFi Kit besitzt auch interne Pullup-Widerstände, deshalb funktioniert es auf dem Steckbrett zuweilen auch ohne die 4,7k. Für den Tiefensensor ist der 4,7k-Widerstand unbedingt nötig, da sonst Messaussetzer auftreten könnnen.
+Damit die Signalleitung einen definierten Wert hat, wird zwischen Signalleitung und Pluspol ein sogenannter Pullup-Widerstand von standardmäßig 4,7 kOhm geschaltet. Das WiFi Kit besitzt auch interne Pullup-Widerstände, deshalb funktioniert es auf dem Steckbrett zuweilen auch ohne die 4,7k. Für den Tiefensensor ist der 4,7k-Widerstand unbedingt nötig, da sonst Messaussetzer auftreten können.
 
  
 ::: {#fig-t-sensor-breadboard  layout-ncol=2 layout-valign="bottom"}
@@ -160,38 +146,30 @@ Versuchsaufbau auf einem Steckbrett, links mit der [Fritzing](https://fritzing.o
 
 ### Hochladen des Programms und Test
 
-Nun verbinden wir, falls noch nicht geschehen, den MC über ein USB-Kabel mit dem
-Computer und laden das Messprogramm (Sketch) auf den Controller.
+Nun verbinden wir, falls noch nicht geschehen, das MC-Board über ein USB-Kabel mit dem Computer und laden das Messprogramm (Sketch) auf den Controller:
 
 
-1. Herunterladen des Sketches `t-sensor-display.ino` und Abspeichern auf dem Computer
+1. Herunterladen des Sketches [`t-sensor-display.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code) und Abspeichern auf dem Computer
 2. Öffnen des Sketches in der Arduino IDE 
 3. Verbinden des Boards über USB mit dem Computer
 4. Einstellen des COM-Ports (der mit USB verbunden ist) und Auswahl des Boards (Generic ESP8266 Module)
 5. Hochladen des Messprogramms über: Sketch -- Hochladen
 
 Wenn alles funktioniert hat, sollte das Display einen Temperaturwert anzeigen. 
-Wenn es nichts oder "No Sensor" anzeigt, dann kurz das USB-Kabel trennen und noch 
-einmal versuchen. Falls es dann noch immer "No Sensor" anzeigt, bitte die 
-elektrischen Verbindungen nachprüfen und ggf. mit dem Multimeter nachmessen.
+Wenn es nichts oder "No Sensor" anzeigt, dann kurz das USB-Kabel trennen und noch einmal versuchen. Falls es dann noch immer "No Sensor" anzeigt, bitte die elektrischen Verbindungen nachprüfen und ggf. mit dem Multimeter nachmessen.
 
-Wenn alles funktioniert, können wir entweder das Messprogramm (Sketch) weiter 
-verbessern oder zum nächsten Schritt übergehen und eine Freiladsonde bauen.
+Wenn alles funktioniert, kann man etwas experimentieren, das Messprogramm (Sketch) weiter verbessern oder zum nächsten Schritt übergehen und eine Freilandsonde bauen.
 
 ## Freilandversion und einfaches Gehäuse
 
-Im Interesse einer kompakten Gestaltung und um den Löt- und Verdrahtungsaufwand zu minimieren
-verwendet der Bauvorschlag eine Verdrahtungsvariante ohne Leiterplatte und ein 
-kurzes Plexiglasrohr als Gehäuse. Alternativ dazu sind andere Möglichkeiten, z.B. eine 
-durchsichtige Süßwarenverpackung, ein handelsübliches Elektronikgehäuse oder ein 
-Gehäuse aus dem 3D-Drucker.
+Im Interesse einer kompakten Gestaltung und um den Löt- und Verdrahtungsaufwand zu minimieren verwendet der Bauvorschlag eine Verdrahtungsvariante ohne Leiterplatte und ein kurzes Plexiglasrohr als Gehäuse.
+Alternativ dazu sind andere Möglichkeiten, z.B. eine durchsichtige Süßwarenverpackung, ein handelsübliches Elektronikgehäuse oder ein Gehäuse aus dem 3D-Drucker.
 
 ::: {#fig-mc-wiring-top}
 
 ![](fig/mc-top.jpg)
 
-Ansicht der Schaltung von oben. Der 4,7k Widerstand wird durch die Lötösen von 
-3,3V und D1 durchgeführt. An die Beinchen auf der Unterseite wird das Sensorkabel angelötet.
+Ansicht der Schaltung von oben. Der 4,7k Widerstand wird durch die Lötösen von 3,3V und D1 durchgeführt. An die Beinchen auf der Unterseite wird das Sensorkabel angelötet.
 ::: 
 
 
@@ -201,17 +179,13 @@ Ansicht der Schaltung von oben. Der 4,7k Widerstand wird durch die Lötösen von
 
 ![Angelöteter Temperatursensor](fig/mc-bottom-wires3.jpg)
 
-Ansicht von unten. Man erkennt die etwas gekürzten Beinchen des Widerstands bei 
-3,3V und D1. Zusätzlich ist ein Stück Draht an den Minuspol (GND) angelötet. Hierfür 
-kann man ein Stück eines Widerstandsbeinchens verwenden.
+Ansicht von unten. Man erkennt die etwas gekürzten Beinchen des Widerstands bei 3,3V und D1. Zusätzlich ist ein Stück Draht an den Minuspol (GND) angelötet. Hierfür kann man ein Stück eines Widerstandsbeinchens verwenden.
 
 :::
 
 ### Zusammenbau der Elektronik
 
-Für den Bauvorschlag sind nur 3 Lötpunkte erforderlich, deshalb wurde eine freie 
-Verdrahtung gewählt. Hierbei dienen die Beinchen des 4,7k-Widerstands als Anschlussdrähte.
-Wichtig ist, alle elektrischen Verbindungen gut mit Schrumpfschlauch zu isolieren. 
+Für den Bauvorschlag sind nur 3 Lötpunkte erforderlich, deshalb wurde eine freie Verdrahtung gewählt. Hierbei dienen die Beinchen des 4,7k-Widerstands als Anschlussdrähte. Wichtig ist, alle elektrischen Verbindungen gut mit Schrumpfschlauch zu isolieren. 
 
 Vorgehensweise wie folgt (siehe @fig-mc-wiring-bottom und @fig-mc-wiring-bottom):
 
@@ -219,11 +193,11 @@ Vorgehensweise wie folgt (siehe @fig-mc-wiring-bottom und @fig-mc-wiring-bottom)
 2. Widerstand von oben und unten verlöten
 3. Beinchen des Widerstands etwas kürzen
 4. Zusätzlichen Draht an GND (Minuspol) anlöten, z.B. Rest eines Widerstands-Beinchens
-5. Anschlussdrähte des Temperatursensors ca. 2-3cm zusätzlich abisolieren und Kabelenden 
-auf eine Länge schneiden, die eine Verbindung mit den Anschlussdrähten ohne größere mechanische Spannung ermöglicht.
+5. Anschlussdrähte des Temperatursensors ca. 2-3cm zusätzlich abisolieren und Kabelenden auf eine Länge schneiden, die eine Verbindung mit den Anschlussdrähten ohne größere mechanische Spannung ermöglicht.
 6. Enden des Sensorkabels und Anschlussdrähte am MC verzinnen
-7. Schrumpfschlauch zurechtschneiden und über die Anschlüsse des Temperatursensors schieben
-Hierbei darauf achten, dass der Schlauch lang genug ist und andererseits weit genug von der Lötstelle entfernt, damit er sich nicht bereits beim Löten zusammenzieht. Gegebenenfalls Anschlüsse am Temperatursensor noch etwas mehr freilegen
+7. Schrumpfschlauch zurechtschneiden und über die Anschlüsse des Temperatursensors schieben.
+    * Hierbei darauf achten, dass der Schlauch lang genug ist und andererseits weit genug von der Lötstelle entfernt, damit er sich nicht bereits beim Löten zusammenzieht. 
+    * Gegebenenfalls Anschlüsse am Temperatursensor noch etwas mehr freilegen
 8. Anlöten des Temperatursensor-Kabels an die Widerstands-Beinchen
 9. Hochladen des Sketches und Testen der Schaltung
 10. Schrumpfschlauch platzieren und mit einer Heißluftpistole oder einem Föhn schrumpfen
@@ -232,17 +206,13 @@ Hierbei darauf achten, dass der Schlauch lang genug ist und andererseits weit ge
 
 ### Mechanischer Zusammenbau
 
-Der elektronische Aufbau wird in ein Stück Plexiglasrohr eingeführt und im inneren
-verutschunssicher befestigt. Im Bauvorschlag haben wir dazu ein Stück Plexiglas 
-angepasst es geht aber auch mit anderen Materialien, z.B. fester Pappe.
+Der elektronische Aufbau wird in ein Stück Plexiglasrohr eingeführt und im inneren verutschungssicher befestigt. Im Bauvorschlag haben wir dazu ein Stück Plexiglas  angepasst es geht aber auch mit anderen Materialien, z.B. fester Pappe.
 
-Zum Verschließen der Enden des Plexiglasrohrs haben wir ebenfalls kleine 
-Plexiglasscheiben angefertigt und zur Durchführung der Kabel Schlitze eingesägt.
-Der Grund dafür sind die Stecker des USB-Kabels. Das Kabel für den Temperatursensor 
-könnte man vor dem Zusammenlöten auch durch ein Bohrloch fädeln.
+Zum Verschließen der Enden des Plexiglasrohrs haben wir ebenfalls kleine  Plexiglasscheiben angefertigt und zur Durchführung der Kabel Schlitze eingesägt.
+Der Grund dafür sind die Stecker des USB-Kabels.
+Das Kabel für den Temperatursensor könnte man vor dem Zusammenlöten auch durch ein Bohrloch fädeln.
 
-Anstelle von Plexiglasscheiben können ebenfalls andere Materialien oder passende 
-Stopfen verwendet werden, z.B. aushärtbare Modelliermasse.
+Anstelle von Plexiglasscheiben können ebenfalls andere Materialien oder passende Stopfen verwendet werden, z.B. aushärtbare Modelliermasse.
 
 ::: {#fig-t-sonde-foto}
 
@@ -267,11 +237,12 @@ Damit das Kabel senkrecht hängt, kommt ans Ende ein Gewicht, z.B. ein Kabelbind
 **Hinweis zur Powerbank**
 
 Die Sonde benötigt nur sehr wenig Strom. Deshalb gehen manche Powerbanks nach kurzer zeit in den Stromsparmodus.
-Falls das auftritt, kann man zwischen 5V und Masse einen Widerstand als "künstlichen Verbraucher" einfügen, z.B. 47 Ohm. Kleinere Widerstände (10 Ohm) können gegebenenfalls heiß werden, größere (z.B. 100 Ohm) eventuell nicht genügen.
+Falls das auftritt, kann man zwischen 5V und Minuspol einen Widerstand als "künstlichen Verbraucher" einfügen, z.B. 47 Ohm. Kleinere Widerstände (10 Ohm) können gegebenenfalls heiß werden, größere (z.B. 100 Ohm) eventuell nicht genügen.
 
 
 **Kontakt**
 
-Wir hoffen dass das Projekt helfen kann, dien physikalische Struktur von Seen besser zu verstehen. Wenn Sie zum Bauvorschlag Fragen, Anmerkungen oder Vorschläge haben, lassen Sie es uns bitte wissen. Besonders freuen wir uns auch über Erfahrungsberichte aus Ihrer Schule.
+Wir hoffen dass das Projekt helfen kann, dien physikalische Struktur von Seen besser zu verstehen.
+Wenn Sie zum Bauvorschlag Fragen, Anmerkungen oder Vorschläge haben, lassen Sie es uns bitte wissen. Besonders freuen wir uns auch über Erfahrungsberichte aus Ihrer Schule.
 
 Homepage des Autors: https://tu-dresden.de/Members/thomas.petzoldt
