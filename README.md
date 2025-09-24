@@ -1,15 +1,16 @@
 # seetemperatur
- Eine DIY-Sonde zur Erfassung der thermischen Schichtung
+
+Eine Do-It-Yourself (DIY)-Sonde zur Erfassung der thermischen Schichtung
 
 ## Projektseite für eine Selbstbau-Temperatursonde zur Erfassung der Schichtung von Seen
 
 Dieses Repository enthält ergänzendes Material zum Bauvorschlag "Temperatursonde für Seen" aus dem Zeitschriftenartigel in "Unterricht Biologie kompakt". 
-Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben finden Sie im Zeitschriftenartikel.
+Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben finden Sie im Zeitschriftenartikel (in Vorbereitung).
 
 ## Bauanleitung und Programmcode
 
 * Detaillierte [Bauanleitung](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
-* [Temperatursensor und und Display](code/t-sensor-display/) (Arduino-Sketch)
+* Code für [Temperatursensor mit Display](code/t-sensor-display/) (Arduino-Sketch)
 
 ## Daten
 
@@ -23,10 +24,26 @@ Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hint
 * In der Praxis erlauben alle genannten Lizenzen eine freie Nutzung unter fairen Bedingungen und erfordern eine Quellenangabe.
 * Für die im zugehörigen Zeitschriftenartikel enthaltenen Texte und Abbildungen gilt im Unterschied dazu das Copyright des Verlags.
 
-## Weiterführende Links
+
+## Weblinks und Literatur
+
+### Didaktisches Material
+
+Unterricht Biologie kompakt ...(Zeitschriftenheft in Vorbereitung)
+
+### Mikrocontroller-Programmierung
 
 * Arduino-Programmierungebung: https://www.arduino.cc/
 
-## Literatur
+### Forschungsprojekte
 
-Biologie kompakt ...
+Das vom Bundesministerium für Forschung, technologie und Raumfahrt geförderte Projekt "Klimakonform" beschäftigt sich mit den Auswirkungen der Klimaerwärmung und mit Möglichkeiten zur Klimaanpassung. In diesem Zusammenhang sind sogenannte Faktenblätter mit Hintergrundinformationen zur Schichtung in Talsperren und zur Trinkwasserversorgung entstanden. Mehr dazu unter:
+
+* https://klimakonform.uw.tu-dresden.de/ (Projektseite)
+* Faktenblatt Talsperren: Schichtung [pdf 0,3 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_01_schichtung.pdf)
+* Faktenblatt Talsperren: Klimawandel [pdf 0,6 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_02_klimatrend.pdf)
+* Faktenblatt Talsperre: Bewirtschaftung [pdf 0,4 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_03_management.pdf)
+
+* Homepage des Autors https://tu-dresden.de/Members/thomas.petzoldt
+
+

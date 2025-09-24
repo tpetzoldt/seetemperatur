@@ -17,13 +17,13 @@
 // I2C connection of display
 #include <Wire.h>
 
-// Setting if Heltec WiFi Kit 8 is installed in
-#define ONE_WIRE_BUS D1
+// Setting if Heltec WiFi Kit 8 Board manager is available
+// #define ONE_WIRE_BUS D1
 
-// Setting for generic ESP 8266 boards if WiFi Kit 8 is not installed
+// Setting for generic ESP 8266 boards if WiFi Kit 8 Board manager is not available
 //Heltec D6 == Pin 12
 //       D1 == Pin 5
-//#define ONE_WIRE_BUS 5
+#define ONE_WIRE_BUS 5
 
 
 // Setup a oneWire instance to communicate with any OneWire devices
