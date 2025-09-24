@@ -1,24 +1,26 @@
-# seetemperatur
+---
+subtitle: Die Temperaturschichtung im See selbst messen und verstehen
+title: Projektseite
+lang: de
+number-sections: true
+format: html
+embed-resources: true
+---
 
-Eine Do-It-Yourself (DIY)-Sonde zur Erfassung der thermischen Schichtung
-
-## Projektseite für eine Selbstbau-Temperatursonde zur Erfassung der Schichtung von Seen
+Eine Do-It-Yourself (DIY)-Sonde zur Erfassung der thermischen Schichtung von Seen
 
 Dieses Repository enthält ergänzendes Material zum Bauvorschlag "Temperatursonde für Seen" aus dem Zeitschriftenartigel in "Unterricht Biologie kompakt". 
 Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben finden Sie im Zeitschriftenartikel (in Vorbereitung).
 
-## Bauanleitung und Programmcode
+## Bauanleitung, Programmcode und Beispieldatensatz
 
-* Detaillierte [Bauanleitung](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
-* Code für [Temperatursensor mit Display](code/t-sensor-display/) (Arduino-Sketch)
-
-## Daten
-
-* [Temperaturmessungen im Versuchsteich](daten/) (versuchsteich-jun2023-10min.xlsx)
+* Detaillierte [**Bauanleitung**](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
+* Code für einen [Temperatursensor mit Display](https://github.com/tpetzoldt/seetemperatur/code/t-sensor-display/) (Arduino-Sketch)
+* Beispieldatensatz: [Temperaturmessungen im Versuchsteich](https://github.com/tpetzoldt/seetemperatur/daten/) (versuchsteich-jun2023-10min.xlsx)
 
 ## Lizenz
 
-* Dokumente, Daten, Programmcode und Fotos in diesem Web-Repository dienen zur Ergänzung des Zeitschriftenbeitrags. Sie können im Unterschied dazu frei entsprechend der Creative Commons Lizenz [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de) genutzt werden.
+* Dokumente, Daten, Programmcode und Fotos in diesem Web-Repository dienen zur Ergänzung des Zeitschriftenbeitrags. Sie können im Unterschied dazu frei entsprechend der Creative Commons Lizenz CC-BY 4.0 genutzt werden.
 * Im Interesse der Kompatibilität der Codebeispiele mit GPL-lizensiertem Code stehen die Inhalte zusätzlich unter einer Dual-Lizenz. 
   Sie können frei entscheiden ob Sie die [GPL 2.0](https://www.gnu.de/documents/gpl-2.0.de.html), die [GPL 3.0](https://www.gnu.de/documents/gpl-3.0.de.html) oder die permissivere [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de) anwenden möchten.
 * In der Praxis erlauben alle genannten Lizenzen eine freie Nutzung unter fairen Bedingungen und erfordern eine Quellenangabe.
@@ -29,11 +31,11 @@ Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hint
 
 ### Didaktisches Material
 
-Unterricht Biologie kompakt ...(Zeitschriftenheft in Vorbereitung)
+* Unterricht Biologie kompakt ...(Zeitschriftenheft in Vorbereitung)
 
 ### Mikrocontroller-Programmierung
 
-* Arduino-Programmierungebung: https://www.arduino.cc/
+* Arduino-Programmierungebung: [https://www.arduino.cc/](https://www.arduino.cc/)
 
 ### Forschungsprojekte
 
@@ -44,6 +46,12 @@ Das vom Bundesministerium für Forschung, technologie und Raumfahrt geförderte 
 * Faktenblatt Talsperren: Klimawandel [pdf 0,6 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_02_klimatrend.pdf)
 * Faktenblatt Talsperre: Bewirtschaftung [pdf 0,4 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_03_management.pdf)
 
-* Homepage des Autors https://tu-dresden.de/Members/thomas.petzoldt
+### Homepage des Autors
 
+* [https://tu-dresden.de/Members/thomas.petzoldt](https://tu-dresden.de/Members/thomas.petzoldt)
+
+
+### Literatur
+
+* ...
 
