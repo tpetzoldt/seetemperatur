@@ -7,6 +7,8 @@ format: html
 embed-resources: true
 ---
 
+![](fig/t-sonde-plexirohr.jpg)
+
 Eine Do-It-Yourself (DIY)-Sonde zur Erfassung der thermischen Schichtung von Seen
 
 Dieses Repository enthält ergänzendes Material zum Bauvorschlag "Temperatursonde für Seen" für den  Zeitschriftenartikel in "Unterricht Biologie kompakt". 
@@ -42,7 +44,7 @@ Die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben find
 
 Das vom Bundesministerium für Forschung, technologie und Raumfahrt geförderte Projekt "Klimakonform" beschäftigt sich mit den Auswirkungen der Klimaerwärmung und mit Möglichkeiten zur Klimaanpassung. In diesem Zusammenhang sind sogenannte Faktenblätter mit Hintergrundinformationen zur Schichtung in Talsperren und zur Trinkwasserversorgung entstanden. Mehr dazu unter:
 
-* https://klimakonform.uw.tu-dresden.de/ (Projektseite)
+* [https://klimakonform.uw.tu-dresden.de/](https://klimakonform.uw.tu-dresden.de/) (Projektseite)
 * Faktenblatt Talsperren: Schichtung [pdf 0,3 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_01_schichtung.pdf)
 * Faktenblatt Talsperren: Klimawandel [pdf 0,6 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_02_klimatrend.pdf)
 * Faktenblatt Talsperre: Bewirtschaftung [pdf 0,4 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_03_management.pdf)
