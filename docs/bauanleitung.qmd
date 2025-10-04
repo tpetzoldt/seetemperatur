@@ -218,7 +218,7 @@ Anstelle von Plexiglasscheiben können ebenfalls andere Materialien oder passend
 
 ![](fig/t-sonde-foto.jpg)
 
-Fertige Temperatursondemit Powerbank zur Stromversorgung und Stahlkarabiner zur Befestigung eines Gewichts.
+Fertige Temperatursonde mit Powerbank zur Stromversorgung und Stahlkarabiner zur Befestigung eines Gewichts.
 :::
 
 Für die Messung in unterschiedlichen Tiefen markieren wir das Kabel mit wasserfestem Klebeband, z.B. alle 20cm für die ersten 2m und dann in 50cm-Schritten. Je nach Länge des Kabels kann es sinnvoll sein, verschiedene Farben zu verwenden, z.B. weiß für 20, 40, 60, 80cm, rot für die 1m-Schritte und zusätzlich alle 5m in silber.
