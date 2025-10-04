@@ -38,8 +38,8 @@ Je nach Vorkenntnissen ist es sinnvoll, Rat und Kooperationen zu suchen, z.B. be
 * Widerstand 4,7kOhm
 * Steckbrett und Verbindungsleitungen
 * Schrumpfschlauch, verschiedene Größen
-* Plexiglasrohr, Duchmesser xx, Länge 12cm
-* Material für Abschlussstopfen, z.B. Plexiglas, PVC oder Holz
+* Plexiglasrohr, Innendurchmesser 24, Länge 12cm
+* Material für Abschlussstopfen und Befestigung im Rohr, z.B. Plexiglas, PVC oder Holz
 * Silikon zur Abdichtung
 * Wasserfestes Klebeband, z.B. Duct Tape
 * optional: Steckverbinder 3polig
@@ -217,32 +217,37 @@ Anstelle von Plexiglasscheiben können ebenfalls andere Materialien oder passend
 ::: {#fig-t-sonde-foto}
 
 ![](fig/t-sonde-foto.jpg)
-Fertige Temperatursondemit Powerbank zur Stromversorgung und Stahlkarabiner als Gewicht. Es fehlen noch die Endstopfen und die Kabelmarkierung.
+
+Fertige Temperatursondemit Powerbank zur Stromversorgung und Stahlkarabiner zur Befestigung eines Gewichts.
 :::
 
-Für die Messung in unterschiedlichen Tiefen markieren wir das Kabel mit wasserfestem Klebeband, z.B. alle 20cm für die ersten 2m und dann in 50cm-Schritten. Je nach Länge des Kabels kann es sinnvoll sein, verschiedene Farben zu verwenden, z.B. weiß für 20cm und 50cm, silber für die 1m-Schritte und zusätzlich alle 5m in rot.
+Für die Messung in unterschiedlichen Tiefen markieren wir das Kabel mit wasserfestem Klebeband, z.B. alle 20cm für die ersten 2m und dann in 50cm-Schritten. Je nach Länge des Kabels kann es sinnvoll sein, verschiedene Farben zu verwenden, z.B. weiß für 20, 40, 60, 80cm, rot für die 1m-Schritte und zusätzlich alle 5m in silber.
 
-Damit das Kabel senkrecht hängt, kommt ans Ende ein Gewicht, z.B. ein Kabelbinder mit einem Stahlkarabiner.
+Damit das Kabel senkrecht hängt, kommt ans Ende ein Gewicht, z.B. ein Edelstahlkarabiner.
 
 ## Weitere Möglichkeiten und Hinweise
 
-* verdrehsicherer dreipoliger Steckverbinder zwischen MC und T-Sensor
-* Gehäuse aus dem 3D-Drucker
-
-* Test mit dem Arduino-Terminal
-* WiFi-Option
-* Datenloggerfunktion
-* LEDs
 
 **Hinweis zur Powerbank**
 
-Die Sonde benötigt nur sehr wenig Strom. Deshalb gehen manche Powerbanks nach kurzer zeit in den Stromsparmodus.
+Die Sonde benötigt nur sehr wenig Strom. Deshalb gehen manche Powerbanks nach kurzer Zeit in den Stromsparmodus.
 Falls das auftritt, kann man zwischen 5V und Minuspol einen Widerstand als "künstlichen Verbraucher" einfügen, z.B. 47 Ohm. Kleinere Widerstände (10 Ohm) können gegebenenfalls heiß werden, größere (z.B. 100 Ohm) eventuell nicht genügen.
 
+**Zusatzoptionen**
+
+* Verdrehsicherer dreipoliger Steckverbinder zwischen Mikrocontroller und Temperatursensor
+* Gehäuse aus dem 3D-Drucker
+* Datenausgabe auf den Rechner mit Arduino-Terminal
+* Nutzung eines Handys zur Stromversorgung und zur Datenaufzeichnung (benötigt Adapter USB-C nach USB-A-Buchse und die App "Serial USB Terminal" von [Kai Morich](https://www.kai-morich.de/android/))
+
+**Erweiterte Sketches**
+
+* Mikrocontroller als WiFi Accesspoint zur datenausgabe
+* Interne Datenloggerfunktion des Mikrocontrollers
 
 **Kontakt**
 
-Wir hoffen dass das Projekt helfen kann, dien physikalische Struktur von Seen besser zu verstehen.
+Wir hoffen dass das Projekt helfen kann, die physikalische Struktur von Seen besser zu verstehen.
 Wenn Sie zum Bauvorschlag Fragen, Anmerkungen oder Vorschläge haben, lassen Sie es uns bitte wissen. Besonders freuen wir uns auch über Erfahrungsberichte aus Ihrer Schule.
 
 Homepage des Autors: https://tu-dresden.de/Members/thomas.petzoldt
