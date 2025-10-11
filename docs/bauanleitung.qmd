@@ -231,7 +231,11 @@ Damit das Kabel senkrecht hängt, kommt ans Ende ein Gewicht, z.B. ein Edelstahl
 **Hinweis zur Powerbank**
 
 Die Sonde benötigt nur sehr wenig Strom. Deshalb gehen manche Powerbanks nach kurzer Zeit in den Stromsparmodus.
-Falls das auftritt, kann man zwischen 5V und Minuspol einen Widerstand als "künstlichen Verbraucher" einfügen, z.B. 47 Ohm. Kleinere Widerstände (10 Ohm) können gegebenenfalls heiß werden, größere (z.B. 100 Ohm) eventuell nicht genügen.
+Falls das auftritt, kann man den Sketch `t-sensor-display-wifi` benutzen. 
+Mit der WiFi-Version kann man die Temperaturdaten zusätzlich auch auf einem Handydisplay anzeigen lassen.
+Dafür wird mehr Strom benötigt.
+
+Alternativ könnte man zwischen 5V und Minuspol einen Widerstand als "künstlichen Verbraucher" einfügen, z.B. 47 Ohm. Kleinere Widerstände (10 Ohm) können gegebenenfalls heiß werden, größere (z.B. 100 Ohm) eventuell nicht genügen.
 
 **Zusatzoptionen**
 
