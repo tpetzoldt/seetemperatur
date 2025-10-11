@@ -231,7 +231,7 @@ Damit das Kabel senkrecht hängt, kommt ans Ende ein Gewicht, z.B. ein Edelstahl
 **Hinweis zur Powerbank**
 
 Die Sonde benötigt nur sehr wenig Strom. Deshalb gehen manche Powerbanks nach kurzer Zeit in den Stromsparmodus.
-Falls das auftritt, kann man den Sketch `t-sensor-display-wifi` benutzen. 
+Falls das auftritt, kann man den Sketch [`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code) benutzen. 
 Mit der WiFi-Version kann man die Temperaturdaten zusätzlich auch auf einem Handydisplay anzeigen lassen.
 Dafür wird mehr Strom benötigt.
 
@@ -246,7 +246,7 @@ Alternativ könnte man zwischen 5V und Minuspol einen Widerstand als "künstlich
 
 **Erweiterte Sketches**
 
-* Mikrocontroller als WiFi Accesspoint zur datenausgabe
+* Mikrocontroller als WiFi Accesspoint zur Datenausgabe ([`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code))
 * Interne Datenloggerfunktion des Mikrocontrollers
 
 **Kontakt**
