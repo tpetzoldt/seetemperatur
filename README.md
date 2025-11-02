@@ -4,13 +4,14 @@ Eine Do-It-Yourself (DIY)-Sonde zur Erfassung der thermischen Schichtung
 
 ## Projektseite für eine Selbstbau-Temperatursonde zur Erfassung der Schichtung von Seen
 
-Dieses Repository enthält ergänzendes Material zum Bauvorschlag "Temperatursonde für Seen" aus dem Zeitschriftenartigel in "Unterricht Biologie kompakt". 
+Dieses Repository enthält ergänzendes Material zum Bauvorschlag "Temperatursonde für Seen" aus dem Zeitschriftenartikel in "Unterricht Biologie kompakt". 
 Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben finden Sie im Zeitschriftenartikel (in Vorbereitung).
 
 ## Bauanleitung und Programmcode
 
 * Detaillierte [Bauanleitung](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
 * Code für [Temperatursensor mit Display](code/t-sensor-display/) (Arduino-Sketch)
+* Code für [Temperatursensor mit Display und WiFi](code/t-sensor-display-wifi/) (Arduino-Sketch)
 
 ## Daten
 
@@ -18,7 +19,7 @@ Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hint
 
 ## Lizenz
 
-* Dokumente, Daten, Programmcode und Fotos in diesem Web-Repository dienen zur Ergänzung des Zeitschriftenbeitrags. Sie können im Unterschied dazu frei entsprechend der Creative Commons Lizenz [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de) genutzt werden.
+* Dokumente, Daten, Programmcode und Fotos in diesem Web-Repository dienen zur Ergänzung des Zeitschriftenbeitrags. Sie können entsprechend der Creative Commons Lizenz [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de) frei genutzt werden.
 * Im Interesse der Kompatibilität der Codebeispiele mit GPL-lizensiertem Code stehen die Inhalte zusätzlich unter einer Dual-Lizenz. 
   Sie können frei entscheiden ob Sie die [GPL 2.0](https://www.gnu.de/documents/gpl-2.0.de.html), die [GPL 3.0](https://www.gnu.de/documents/gpl-3.0.de.html) oder die permissivere [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.de) anwenden möchten.
 * In der Praxis erlauben alle genannten Lizenzen eine freie Nutzung unter fairen Bedingungen und erfordern eine Quellenangabe.
