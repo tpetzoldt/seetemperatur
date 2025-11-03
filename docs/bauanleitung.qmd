@@ -87,28 +87,34 @@ Zum Programmieren des MC werden zwei unterschiedliche Arten von Software benöti
 2. Eine Programmierumgebung zur Erstellung dieses Programm und um es auf den MC zu schreiben.
 
 Als Programmierumgebung verwenden wir die frei erhältliche [Arduino IDE](https://www.arduino.cc/en/software/). Beim Arduino handelt es sich um eine Familie von MC-Boards, die besonders einsteigerfreundlich sind.
-Um die Arduino IDE auch für andere MC-Boards zu verwenden, z.B. das WiFi Kit 8, kann man eine zusätzliche Boardverwalter-URL eintragen (@fig-arduino-install-board). 
+Um die Arduino IDE auch für andere MC-Boards zu verwenden, z.B. das WiFi Kit 8, muss eine zusätzliche Boardverwalter-URL eintragen werden (@fig-arduino-install-board). 
 Für das WiFi Kit 8 benötigt man einen Boardverwalter für die ESP 8266-Prozessorfamilie.
 
 **Wichtiger Hinweis zum USB-Treiber (CP2104)**
 
-Wenn dein Computer das Board beim Anschließen nicht als virtuellen COM-Port erkennt, musst Du den entsprechenden Treiber, den CP210x Driver (von Silicon Labs), manuell installieren. Den aktuellen Treiber für alle Betriebssysteme finden Sie direkt beim Hersteller Silicon Labs.
+Wenn dein Computer das Board beim Anschließen nicht als virtuellen COM-Port erkennt, musst Du den entsprechenden Treiber, den CP210x Driver (von Silicon Labs), manuell installieren. Den aktuellen Treiber für alle Betriebssysteme findest Du direkt beim Hersteller Silicon Labs.
 
-Die Details dazu sind auf diversen Internetseiten zu finden, bei manchen Online-Händlern für den Mikrocontroller eine passende Anleitung oder ein Ebook erhältlich.
+Die Details dazu sind auf diversen Internetseiten zu finden. Bei manchen Online-Händlern ist für den Mikrocontroller eine passende Anleitung oder ein Ebook erhältlich.
 
 **Vorgehensweise**
 
-1. Download der Arduino IDE von: https://www.arduino.cc/en/software/
-2. Installation der Arduino IDE
+1. Download und Installation der Arduino IDE von: https://www.arduino.cc/en/software/
 3. Setzen der Sprache auf deutsch über File -- Preferences
 4. Neustart
-5. Installation der Bordverwalter-URL über Datei -- Einstellungen
+5. Hinzufügen der Bordverwalter-URL über Datei -- Einstellungen in das Feld Zusätzliche Boardverwalter-URLs:
     * `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
-6. Installieren zusätzlicher Bibliotheken:
+6. **Installieren zusätzlicher Bibliotheken:** Öffne den Bibliotheksverwalter (Sketch → Bibliothek einbinden → Bibliotheken verwalten...) und suche nacheinander nach den folgenden Bibliotheken, um diese zu installieren:
     * OneWire
     * DallasTemperature
     * U8g2
     
+Die optionale WiFi-Version benötigt zusätzlich die folgenden Bibliotheken:
+    * ESPAsyncTCP
+    * ESPAsyncWebServer
+    
+Sie können später nachinstalliert werden.
+
+
 ::: {#fig-arduino-install-board}
 
 ![](fig/arduino-install-board.png)
