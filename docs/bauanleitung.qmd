@@ -129,7 +129,7 @@ Verbindungsleitungen benötigt:
 * Pluspol (3.3V)
 * Signalleitung an Pin D1
 
-Verbindungskabel sind mit Breadboards im Set erhältlich. Alternativ genügtKlingeldraht mit einem Durchmesser von ca. 0.32mm.
+Verbindungskabel sind mit Breadboards im Set erhältlich. Alternativ genügt Klingeldraht mit einem Durchmesser von ca. 0.32mm.
 
 Damit die Signalleitung einen definierten Wert hat, wird zwischen Signalleitung und Pluspol ein sogenannter Pullup-Widerstand von standardmäßig 4,7 kOhm geschaltet. Das WiFi Kit besitzt auch interne Pullup-Widerstände, deshalb funktioniert es auf dem Steckbrett zuweilen auch ohne die 4,7k. Für den Tiefensensor ist der 4,7k-Widerstand unbedingt nötig, da sonst Messaussetzer auftreten können.
 
@@ -228,30 +228,33 @@ Damit das Kabel senkrecht hängt, kommt ans Ende ein Gewicht, z.B. ein Edelstahl
 ## Weitere Möglichkeiten und Hinweise
 
 
-**Hinweis zur Powerbank**
+**Hinweis zur Stromversorgung**
 
-Die Sonde benötigt nur sehr wenig Strom. Deshalb gehen manche Powerbanks nach kurzer Zeit in den Stromsparmodus.
-Falls das auftritt, kann man den Sketch [`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code) benutzen. 
-Mit der WiFi-Version kann man die Temperaturdaten zusätzlich auch auf einem Handydisplay anzeigen lassen.
-Dafür wird mehr Strom benötigt.
+Die Sonde benötigt nur sehr wenig Strom (weniger als 25mA). Daher gehen manche Powerbanks nach kurzer Zeit in den Stromsparmodus.
+Viele moderne Powerbanks (insbesondere Modelle mit USB-C-Unterstützung) verfügen über einen "Niedrigstrommodus". Dieser Modus kann oft durch zweimaliges Drücken der Power-Taste aktiviert werden.
 
-Alternativ könnte man zwischen 5V und Minuspol einen Widerstand als "künstlichen Verbraucher" einfügen, z.B. 47 Ohm. Kleinere Widerstände (10 Ohm) können gegebenenfalls heiß werden, größere (z.B. 100 Ohm) eventuell nicht genügen.
+Falls die Powerbank diesen Modus nicht unterstützt, kann man den Sketch [`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code) benutzen. Diese Version benötigt ca. 80mA. Mit der WiFi-Version kann man die Temperaturdaten auch zusätzlich auf einem Handydisplay anzeigen lassen.
+
+Eine weitere Möglichkeit ist die Stromversorgung aus dem USB-C-Anschluss des Mobiltelefons, statt einer Powerbank. Wird die Sonde direkt über das Mobiltelefon mit Strom versorgt, bietet sich der weitere Vorteil, dass man die Ausgaben des Sketches (z.B. die Temperaturwerte) mit einer Terminal-App (wie dem Serial USB Terminal) direkt am Handy lesen und aufzeichnen kann.
+
+Als robuste Hardware-Lösung kann man zwischen 3.3 V und Minuspol einen Widerstand als "künstlichen Verbraucher" einfügen. Mit einem Widerstand von 47Ω wurde eine Gesamtstromstärke von 85mA gemessen (davon 70mA durch den Widerstand). Wichtig ist hierbei die ausreichende Dimensionierung des Widerstands für die Verlustleistung. Da der Widerstand allein ≈0.232W ableiten muss, ist der für einfache Widerstände typische Standard von 0.25 W sehr knapp bemessen. Für eine langlebige Schaltung wird ein Widerstand der Klasse 0.5W (oder mehr) empfohlen, oder man schaltet zwei Widerstände mit je 100 Ohm parallel^[Anmerkung zur Messung: Die gemessene Gesamtstromstärke von 85 mA ist geringer als die Summe der Einzelströme (25 mA der Schaltung + 70 mA des Widerstands ≈95 mA). Dies ist typisch für Messungen im Serienschaltkreis: Jedes reale Amperemeter besitzt einen geringen Innenwiderstand. Dieser reduziert die Betriebsspannung der Schaltung und so den Gesamtstrom. Strommessungen sind messtechnisch anspruchsvoller als Spannungsmessungen]
+
 
 **Zusatzoptionen**
 
-* Verdrehsicherer dreipoliger Steckverbinder zwischen Mikrocontroller und Temperatursensor
-* Gehäuse aus dem 3D-Drucker
-* Datenausgabe auf den Rechner mit Arduino-Terminal
-* Nutzung eines Handys zur Stromversorgung und zur Datenaufzeichnung (benötigt Adapter USB-C nach USB-A-Buchse und die App "Serial USB Terminal" von [Kai Morich](https://www.kai-morich.de/android/))
+* Verdrehsicherer dreipoliger Steckverbinder zwischen Mikrocontroller und Temperatursensor (erlaubt Anschluss von Sensoren mit unterschiedlicher Kabellänge)
+* Gehäuse aus dem 3D-Drucker (professionelleres Aussehen)
+* Datenausgabe auf den PC oder Laptop über das Arduino-Terminal (Standardmethode zur Überprüfung)
+* Nutzung eines Smartphones zur Stromversorgung und zur Datenaufzeichnung (benötigt geeigneten USB-C-Adapter und die App "Serial USB Terminal" von [Kai Morich](https://www.kai-morich.de/android/))
 
 **Erweiterte Sketches**
 
-* Mikrocontroller als WiFi Accesspoint zur Datenausgabe ([`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code))
-* Interne Datenloggerfunktion des Mikrocontrollers
+* WLAN-Accesspoint-Betrieb zur Datenausgabe: Der Mikrocontroller stellt ein eigenes WLAN-Netzwerk bereit, um die Daten an andere Geräte zu senden ([`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code))
+* Interne Datenloggerfunktion des Mikrocontrollers (falls dazu Bedarf besteht, kontaktieren Sie uns bitte für weitere Informationen).
 
 **Kontakt**
 
-Wir hoffen dass das Projekt helfen kann, die physikalische Struktur von Seen besser zu verstehen.
-Wenn Sie zum Bauvorschlag Fragen, Anmerkungen oder Vorschläge haben, lassen Sie es uns bitte wissen. Besonders freuen wir uns auch über Erfahrungsberichte aus Ihrer Schule.
+Wir hoffen dass das Projekt helfen kann, die physikalische Struktur von Seen Unterricht oder in Forschungsprojekten besser zu verstehen.
+Sollten Sie Fragen, Anmerkungen oder Vorschläge zum Bauvorschlag haben, zögern Sie bitte nicht, uns zu kontaktieren. Wir freuen uns über Erfahrungsberichte und Anregungen aus Ihrer Schule.
 
-Homepage des Autors: https://tu-dresden.de/Members/thomas.petzoldt
+Homepage des Autors: [https://tu-dresden.de/Members/thomas.petzoldt](https://tu-dresden.de/Members/thomas.petzoldt)
