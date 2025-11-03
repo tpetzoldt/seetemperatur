@@ -109,8 +109,9 @@ Die Details dazu sind auf diversen Internetseiten zu finden. Bei manchen Online-
     * U8g2
     
 Die optionale WiFi-Version benötigt zusätzlich die folgenden Bibliotheken:
-    * ESPAsyncTCP
-    * ESPAsyncWebServer
+
+* ESPAsyncTCP
+* ESPAsyncWebServer
     
 Sie können später nachinstalliert werden.
 
