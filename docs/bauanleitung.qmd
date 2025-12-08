@@ -9,7 +9,7 @@ embed-resources: true
 
 ## Einführung
 
-Im Folgenden wird eine Messsonde beschrieben, mit der die Temperaturschichtung in einem See oder Teich gemessen werden kann.
+Im Folgenden wird eine Messsonde beschrieben, mit der die Temperaturschichtung in einem See oder Teich gemessen werden kann. Die Temperaturschichtung beeinflusst die Sauerstoffversorgung in tieferen Schichten (Hypolimnion) und die Nährstoffverteilung. Das Verständnis dieser Prozesse ist zentral für die Gewässerökologie.
 
 Es handelt sich um einen Schulprojekt für die gymnasiale Oberstufe.
 Im Prinzip  ähnelt der Versuchsaufbau einem digitalen Thermometer, wie es zum Beispiel in der Küche verwendet werden kann.
@@ -27,6 +27,13 @@ Natürlich kann man vieles besser machen.
 Andererseits lassen sich nicht alle Klippen vermeiden, insbesondere das Einrichten der Entwicklungsumgebung, der Umgang mit dem Lötkolben und der Bau eines einfachen Gehäuses.
 Je nach Vorkenntnissen ist es sinnvoll, Rat und Kooperationen zu suchen, z.B. beim Informatiklehrer, einer Elektronik- und Robotik-Arbeitsgemeinschaft oder einem [**FabLab bzw. Makerspace**](https://de.wikipedia.org/wiki/FabLab).
 
+**Sicherheitshinweise**
+
+* Achte beim Löten auf gute Belüftung.
+* Die Sonde darf nicht mit Netzspannung betrieben werden.
+* Beachte die Sicherheitsbestimmungen beim Arbeiten am Gewässer - Schwimmweste nutzen!
+* Die Sonde ist nicht für den Einsatz bei Gewitter geeignet.
+
 
 ## Vorbereitung
 
@@ -35,8 +42,8 @@ Je nach Vorkenntnissen ist es sinnvoll, Rat und Kooperationen zu suchen, z.B. be
 * Heltec 8266 WiFi Kit 8 oder vergleichbar
 * USB-Kabel für Stromversorgung und Programmierung
 * DS18B20 mit Kabel (z.B. 3m oder 10m)
-* Widerstand 4,7kOhm
-* Steckbrett und Verbindungsleitungen
+* Widerstand 4,7kΩ (Pull-up Widerstand für die Datenleitung)
+* Steckbrett und Verbindungsleitungen (Breadboard-Leitungen oder Klingeldraht 0,6mm Durchmesser)
 * Schrumpfschlauch, verschiedene Größen
 * Plexiglasrohr, Innendurchmesser 24, Länge 12cm
 * Material für Abschlussstopfen und Befestigung im Rohr, z.B. Plexiglas, PVC oder Holz
@@ -49,8 +56,10 @@ Je nach Vorkenntnissen ist es sinnvoll, Rat und Kooperationen zu suchen, z.B. be
 * Elektroniklötkolben mit Ständer, Lötzinn 0.5mm, bleifrei
 * Lötkolbenreiniger (Schwamm oder Messingwolle), Haltehilfe ("3. Hand")
 * Seitenschneider oder Kombizange
+* Feine Säge zum Schneiden des Plexiglasrohrs
 * Maßband für die Markierung des Kabels
 * optional: Multimeter
+* optional: 47Ω Widerstand (mindestens 0,5 W) für stabile Stromversorgung.
 
 
 ### Anlöten der Stiftleisten
@@ -61,7 +70,7 @@ Da im vorliegenden Fall nur drei Anschlüsse benötigt werden, kann auf eine Lei
 
 Für das Projekt verwenden wir ein Mikrocontroller-Entwicklungsboard (MC-Board) mit USB-Anschluss und integriertem Display, das "Heltec WiFi Kit 8" mit dem in der Bastlerszene sehr verbreiteten ESP 8266 Chip. 
 
-Das Heltec WiFi Kit 8 wird unverlötet geliefert. Wir müssen deshalb zunächst die Stiftleisten anlöten. Hierzu findet man auf Youtube zahlreiche Video-Anleitungen.
+Das Heltec WiFi Kit 8 wird unverlötet geliefert. Wir müssen deshalb zunächst die Stiftleisten anlöten. Hierzu findet man auf Youtube zahlreiche Video-Anleitungen. Die wichtigsten Pins sind GND, 3.3V und D1.
 Gegebenenfalls ist es sinnvoll, zunächst etwas mit einem Stück Lochrasterplatte zu üben oder sich von einem erfahrenen Bastler helfen zu lassen.
 
 Da man für das Steckbrett ein Mikrocontroller mit Stiftleisten benötigt, für die endgültige Schaltung jedoch ohne, empfiehlt es sich, einen Dreierpack Mikrocontroller zu kaufen: einen für den Steckbrettaufbau, einen für die endgültige Schaltung und einen als Reserve.
@@ -78,24 +87,35 @@ Zum Programmieren des MC werden zwei unterschiedliche Arten von Software benöti
 2. Eine Programmierumgebung zur Erstellung dieses Programm und um es auf den MC zu schreiben.
 
 Als Programmierumgebung verwenden wir die frei erhältliche [Arduino IDE](https://www.arduino.cc/en/software/). Beim Arduino handelt es sich um eine Familie von MC-Boards, die besonders einsteigerfreundlich sind.
-Um die Arduino IDE auch für andere MC-Boards zu verwenden, z.B. das WiFi Kit 8, kann man
-eine zusätzliche Boardverwalter-URL eintragen (@fig-arduino-install-board). 
+Um die Arduino IDE auch für andere MC-Boards zu verwenden, z.B. das WiFi Kit 8, muss eine zusätzliche Boardverwalter-URL eintragen werden (@fig-arduino-install-board). 
 Für das WiFi Kit 8 benötigt man einen Boardverwalter für die ESP 8266-Prozessorfamilie.
-Die Details dazu sind auf diversen Internetseiten zu finden, bei manchen Online-Händlern für den Mikrocontroller eine passende Anleitung oder ein Ebook erhältlich.
+
+**Wichtiger Hinweis zum USB-Treiber (CP2104)**
+
+Wenn dein Computer das Board beim Anschließen nicht als virtuellen COM-Port erkennt, musst Du den entsprechenden Treiber, den CP210x Driver (von Silicon Labs), manuell installieren. Den aktuellen Treiber für alle Betriebssysteme findest Du direkt beim Hersteller Silicon Labs.
+
+Die Details dazu sind auf diversen Internetseiten zu finden. Bei manchen Online-Händlern ist für den Mikrocontroller eine passende Anleitung oder ein Ebook erhältlich.
 
 **Vorgehensweise**
 
-1. Download der Arduino IDE von: https://www.arduino.cc/en/software/
-2. Installation der Arduino IDE
+1. Download und Installation der Arduino IDE von: https://www.arduino.cc/en/software/
 3. Setzen der Sprache auf deutsch über File -- Preferences
 4. Neustart
-5. Installation der Bordverwalter-URL über Datei -- Einstellungen
+5. Hinzufügen der Bordverwalter-URL über Datei -- Einstellungen in das Feld Zusätzliche Boardverwalter-URLs:
     * `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
-6. Installieren zusätzlicher Bibliotheken:
+6. **Installieren zusätzlicher Bibliotheken:** Öffne den Bibliotheksverwalter (Sketch → Bibliothek einbinden → Bibliotheken verwalten...) und suche nacheinander nach den folgenden Bibliotheken, um diese zu installieren:
     * OneWire
     * DallasTemperature
     * U8g2
     
+Die optionale WiFi-Version benötigt zusätzlich die folgenden Bibliotheken:
+
+* ESPAsyncTCP
+* ESPAsyncWebServer
+    
+Sie können später nachinstalliert werden.
+
+
 ::: {#fig-arduino-install-board}
 
 ![](fig/arduino-install-board.png)
@@ -129,9 +149,9 @@ Verbindungsleitungen benötigt:
 * Pluspol (3.3V)
 * Signalleitung an Pin D1
 
-Verbindungskabel sind mit Breadboards im Set erhältlich. Alternativ genügtKlingeldraht mit einem Durchmesser von ca. 0.32mm.
+Verbindungskabel sind mit Breadboards im Set erhältlich. Alternativ genügt Klingeldraht mit einem Durchmesser von ca. 0.32mm.
 
-Damit die Signalleitung einen definierten Wert hat, wird zwischen Signalleitung und Pluspol ein sogenannter Pullup-Widerstand von standardmäßig 4,7 kOhm geschaltet. Das WiFi Kit besitzt auch interne Pullup-Widerstände, deshalb funktioniert es auf dem Steckbrett zuweilen auch ohne die 4,7k. Für den Tiefensensor ist der 4,7k-Widerstand unbedingt nötig, da sonst Messaussetzer auftreten können.
+Damit die Signalleitung einen definierten Wert hat, wird zwischen Signalleitung und Pluspol ein sogenannter Pullup-Widerstand von standardmäßig 4,7 kΩ geschaltet. Das WiFi Kit besitzt auch interne Pullup-Widerstände, deshalb funktioniert es auf dem Steckbrett zuweilen auch ohne die 4,7k. Für den Tiefensensor ist der 4,7k-Widerstand unbedingt nötig, da sonst Messaussetzer auftreten können.
 
  
 ::: {#fig-t-sensor-breadboard  layout-ncol=2 layout-valign="bottom"}
@@ -148,22 +168,43 @@ Versuchsaufbau auf einem Steckbrett, links mit der [Fritzing](https://fritzing.o
 
 Nun verbinden wir, falls noch nicht geschehen, das MC-Board über ein USB-Kabel mit dem Computer und laden das Messprogramm (Sketch) auf den Controller:
 
-
 1. Herunterladen des Sketches [`t-sensor-display.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code) und Abspeichern auf dem Computer
 2. Öffnen des Sketches in der Arduino IDE 
 3. Verbinden des Boards über USB mit dem Computer
 4. Einstellen des COM-Ports (der mit USB verbunden ist) und Auswahl des Boards (Generic ESP8266 Module)
 5. Hochladen des Messprogramms über: Sketch -- Hochladen
 
-Wenn alles funktioniert hat, sollte das Display einen Temperaturwert anzeigen. 
+Auch das Display sollte einen Temperaturwert anzeigen. 
 Wenn es nichts oder "No Sensor" anzeigt, dann kurz das USB-Kabel trennen und noch einmal versuchen. Falls es dann noch immer "No Sensor" anzeigt, bitte die elektrischen Verbindungen nachprüfen und ggf. mit dem Multimeter nachmessen.
 
+Zur Fehlersuche kann man die Messwerte auch im Seriellen Monitor (Terminal) der Arduino IDE überprüfen.
+
+**Vorgehensweise**
+
+1. Stellen Sie sicher, dass das Heltec Board über das USB-Kabel mit Ihrem Computer verbunden ist.
+2. Klicken Sie in der Arduino IDE oben rechts auf das Lupen-Symbol (Serieller Monitor).
+3. Wählen Sie in der Dropdown-Liste des Seriellen Monitors die korrekte Baudrate aus. Sie muss mit der im Sketch festgelegten Rate übereinstimmen, aktuell 9600.
+4. Neustart des Mikrocontrollers: Drücke den Reset-Knopf auf dem Heltec-Board oder ziehe kurz das USB-Kabel ab und stecke es wieder ein. Dies ist nötig, um die Ausgabe im Terminal zu starten.
+5. Wenn alles korrekt läuft, sollten die fortlaufend gemessenen Temperaturwerte (z.B. Temperatur: 18.50 C) im Terminal angezeigt werden.
+    
+
 Wenn alles funktioniert, kann man etwas experimentieren, das Messprogramm (Sketch) weiter verbessern oder zum nächsten Schritt übergehen und eine Freilandsonde bauen.
+    
 
 ## Freilandversion und einfaches Gehäuse
 
-Im Interesse einer kompakten Gestaltung und um den Löt- und Verdrahtungsaufwand zu minimieren verwendet der Bauvorschlag eine Verdrahtungsvariante ohne Leiterplatte und ein kurzes Plexiglasrohr als Gehäuse.
-Alternativ dazu sind andere Möglichkeiten, z.B. eine durchsichtige Süßwarenverpackung, ein handelsübliches Elektronikgehäuse oder ein Gehäuse aus dem 3D-Drucker.
+Für eine kompakte Gestaltung und um den Löt- und Verdrahtungsaufwand zu minimieren, setzt dieser Bauvorschlag auf eine minimalistische Verdrahtung ohne Leiterplatte (PCB) und nutzt ein kurzes Plexiglasrohr als Gehäuse.
+Der finale Aufbau verzichtet bewusst auf zusätzliche Platinen, um die Anzahl der Lötstellen auf ein Minimum zu reduzieren und das Projekt dadurch maximal einsteigerfreundlich zu gestalten.
+
+Die Mechanik wird dabei gezielt in die Elektronik integriert:
+
+* Der 4,7 kΩ Pull-up-Widerstand wird direkt zwischen dem Daten-Pin des Sensors und der 3,3 V Spannungsversorgung am Mikrocontroller verlötet. Er dient somit nicht nur der elektrischen Funktion, sondern gleichzeitig als Anschluss für den Sensor.
+
+* Sämtliche Lötstellen werden mit Schrumpfschlauch isoliert und stabilisiert. Dies gewährleistet eine robuste Verbindung direkt am MC-Board.
+
+**Alternativen für das Gehäuse**
+
+Obwohl das Plexiglasrohr eine einfache und transparente Lösung bietet, können bei Bedarf auch andere Gehäuse verwendet werden, z.B. eine durchsichtige Süßwarenverpackung, ein handelsübliches Elektronikgehäuse oder ein Gehäuse aus dem 3D-Drucker. 3D-Drucker.
 
 ::: {#fig-mc-wiring-top}
 
@@ -206,13 +247,15 @@ Vorgehensweise wie folgt (siehe @fig-mc-wiring-bottom und @fig-mc-wiring-bottom)
 
 ### Mechanischer Zusammenbau
 
-Der elektronische Aufbau wird in ein Stück Plexiglasrohr eingeführt und im inneren verutschungssicher befestigt. Im Bauvorschlag haben wir dazu ein Stück Plexiglas  angepasst es geht aber auch mit anderen Materialien, z.B. fester Pappe.
+Der elektronische Aufbau (Mikrocontroller und Display) wird in das Plexiglasrohr eingeführt und im Inneren gegen Verrutschen und Wackeln gesichert (interne Stabilisierung). Im Bauvorschlag wurde dazu ein passendes Stück Plexiglas zugeschnitten, das eng im Rohr sitzt. Für die Stabilisierung sind auch andere Materialien geeignet, beispielsweise PVC-Platten, Holz oder feste Pappe. Wichtig ist, dass die Konstruktion fest sitzt, bevor die Enden verschlossen werden.
 
-Zum Verschließen der Enden des Plexiglasrohrs haben wir ebenfalls kleine  Plexiglasscheiben angefertigt und zur Durchführung der Kabel Schlitze eingesägt.
-Der Grund dafür sind die Stecker des USB-Kabels.
-Das Kabel für den Temperatursensor könnte man vor dem Zusammenlöten auch durch ein Bohrloch fädeln.
+Zum Verschließen der Enden des Plexiglasrohrs werden Endstopfen benötigt. Diese können aus Plexiglasscheiben angefertigt werden, oder es werden passende Stopfen aus PVC/Gummi verwendet.
+Für die Durchführung des Kabels der Stromversorgung (USB) müssen Schlitze eingesägt werden, da der Stecker dicker ist als das Kabel selbst. Das dünnere Sensorkabel (DS18B20) kann idealerweise vor dem Anlöten durch ein eng bemessenes Bohrloch im Stopfen gefädelt werden.
 
-Anstelle von Plexiglasscheiben können ebenfalls andere Materialien oder passende Stopfen verwendet werden, z.B. aushärtbare Modelliermasse.
+Nachdem der Elektronikaufbau erfolgreich getestet und im Rohr fixiert wurde, erfolgt die endgültige und wasserdichte Versiegelung.
+Hierzu werden die Plexiglasscheiben sowie alle Kabeldurchführungen mit Silikon eingeklebt und abgedichtet, wobei das Silikon hier sowohl als Kleber als auch als Dichtmittel fungiert und vollständig aushärten muss, um die wasserdichte Durchführung zu gewährleisten. Alternativ zu Plexiglasscheiben und Silikon können auch passende Stopfen oder andere Materialien, z.B. aushärtbare Modelliermasse, verwendet werden.
+
+Als optionale Verbesserung für mehr Vielseitigkeit können dreipolige Steckverbinder mit angegossenem Anschlusskabel, beispielsweise aus dem PKW-Zubehör, in die Schaltung integriert werden. Dazu wird das Kabel der Steckbuchse direkt anstelle des Sensors mit dem MC-Board verlötet. Das Kabel des  Steckers wird mit dem Kabel des Temperatursensors verlötet. Alle drei Adern sowie die gesamte Lötstelle der Kabelübergänge sollten dabei sorgfältig mit Schrumpfschlauch abgedichtet und isoliert werden. Diese Methode ermöglicht es, Sensoren mit unterschiedlicher Kabellänge schnell anzuschließen und zu trennen.
 
 ::: {#fig-t-sonde-foto}
 
@@ -221,37 +264,40 @@ Anstelle von Plexiglasscheiben können ebenfalls andere Materialien oder passend
 Fertige Temperatursonde mit Powerbank zur Stromversorgung und Stahlkarabiner zur Befestigung eines Gewichts.
 :::
 
-Für die Messung in unterschiedlichen Tiefen markieren wir das Kabel mit wasserfestem Klebeband, z.B. alle 20cm für die ersten 2m und dann in 50cm-Schritten. Je nach Länge des Kabels kann es sinnvoll sein, verschiedene Farben zu verwenden, z.B. weiß für 20, 40, 60, 80cm, rot für die 1m-Schritte und zusätzlich alle 5m in silber.
+muss das Sensorkabel entsprechend markiert werden. Dazu kann wasserfestes Klebeband, wie beispielsweise Duct Tape, verwendet werden. Wir markieren das Kabel beispielswiese alle 20 cm für die ersten 2 Meter und anschließend in 50-cm-Schritten. Um die Ablesung zu erleichtern, kann es sinnvoll sein, verschiedene Farben zu nutzen, zum Beispiel weiß für 20, 40, 60 und 80 cm, rot für die vollen Meter und zusätzlich alle 5 Meter in einer auffälligen Farbe wie Silber.
 
-Damit das Kabel senkrecht hängt, kommt ans Ende ein Gewicht, z.B. ein Edelstahlkarabiner.
+Damit das Kabel im Wasser senkrecht hängt und die Tiefe exakt erreicht wird, befestigen wir am Ende des Sensorkabels ein ausreichend schweres Gewicht, wofür sich ein Edelstahlkarabiner gut eignet.
 
 ## Weitere Möglichkeiten und Hinweise
 
 
-**Hinweis zur Powerbank**
+**Hinweis zur Stromversorgung**
 
-Die Sonde benötigt nur sehr wenig Strom. Deshalb gehen manche Powerbanks nach kurzer Zeit in den Stromsparmodus.
-Falls das auftritt, kann man den Sketch [`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code) benutzen. 
-Mit der WiFi-Version kann man die Temperaturdaten zusätzlich auch auf einem Handydisplay anzeigen lassen.
-Dafür wird mehr Strom benötigt.
+Die Sonde benötigt nur sehr wenig Strom (weniger als 25mA). Daher gehen manche Powerbanks nach kurzer Zeit in den Stromsparmodus.
+Viele moderne Powerbanks (insbesondere Modelle mit USB-C-Unterstützung) verfügen über einen "Niedrigstrommodus". Dieser Modus kann oft durch zweimaliges Drücken der Power-Taste aktiviert werden.
 
-Alternativ könnte man zwischen 5V und Minuspol einen Widerstand als "künstlichen Verbraucher" einfügen, z.B. 47 Ohm. Kleinere Widerstände (10 Ohm) können gegebenenfalls heiß werden, größere (z.B. 100 Ohm) eventuell nicht genügen.
+Falls die Powerbank diesen Modus nicht unterstützt, kann man den Sketch [`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code) benutzen. Diese Version benötigt ca. 80mA. Mit der WiFi-Version kann man die Temperaturdaten auch zusätzlich auf einem Handydisplay anzeigen lassen.
+
+Eine weitere Möglichkeit ist die Stromversorgung aus dem USB-C-Anschluss des Mobiltelefons, statt einer Powerbank. Wird die Sonde direkt über das Mobiltelefon mit Strom versorgt, bietet sich der weitere Vorteil, dass man die Ausgaben des Sketches (z.B. die Temperaturwerte) mit einer Terminal-App (wie dem Serial USB Terminal) direkt am Handy lesen und aufzeichnen kann.
+
+Als robuste Hardware-Lösung kann man zwischen 3.3 V und Minuspol einen Widerstand als "künstlichen Verbraucher" einfügen. Mit einem Widerstand von 47Ω wurde eine Gesamtstromstärke von 85mA gemessen (davon 70mA durch den Widerstand). Wichtig ist hierbei die ausreichende Dimensionierung des Widerstands für die Verlustleistung. Da der Widerstand allein ≈0.232W ableiten muss, ist der für einfache Widerstände typische Standard von 0.25 W sehr knapp bemessen. Für eine langlebige Schaltung wird ein Widerstand der Klasse 0.5W (oder mehr) empfohlen, oder man schaltet zwei Widerstände mit je 100 Ω parallel^[Anmerkung zur Messung: Die gemessene Gesamtstromstärke von 85 mA ist geringer als die Summe der Einzelströme (25 mA der Schaltung + 70 mA des Widerstands ≈95 mA). Dies ist typisch für Messungen im Serienschaltkreis: Jedes reale Amperemeter besitzt einen geringen Innenwiderstand. Dieser reduziert die Betriebsspannung der Schaltung und so den Gesamtstrom. Strommessungen sind messtechnisch anspruchsvoller als Spannungsmessungen]
+
 
 **Zusatzoptionen**
 
-* Verdrehsicherer dreipoliger Steckverbinder zwischen Mikrocontroller und Temperatursensor
-* Gehäuse aus dem 3D-Drucker
-* Datenausgabe auf den Rechner mit Arduino-Terminal
-* Nutzung eines Handys zur Stromversorgung und zur Datenaufzeichnung (benötigt Adapter USB-C nach USB-A-Buchse und die App "Serial USB Terminal" von [Kai Morich](https://www.kai-morich.de/android/))
+* Verdrehsicherer dreipoliger Steckverbinder zwischen Mikrocontroller und Temperatursensor (erlaubt Anschluss von Sensoren mit unterschiedlicher Kabellänge)
+* Gehäuse aus dem 3D-Drucker (professionelleres Aussehen)
+* Datenausgabe auf den PC oder Laptop über das Arduino-Terminal (Standardmethode zur Überprüfung)
+* Nutzung eines Smartphones zur Stromversorgung und zur Datenaufzeichnung (benötigt geeigneten USB-C-Adapter und die App "Serial USB Terminal" von [Kai Morich](https://www.kai-morich.de/android/))
 
 **Erweiterte Sketches**
 
-* Mikrocontroller als WiFi Accesspoint zur Datenausgabe ([`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code))
-* Interne Datenloggerfunktion des Mikrocontrollers
+* WLAN-Accesspoint-Betrieb zur Datenausgabe: Der Mikrocontroller stellt ein eigenes WLAN-Netzwerk bereit, um die Daten an andere Geräte zu senden ([`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code))
+* Interne Datenloggerfunktion des Mikrocontrollers (falls dazu Bedarf besteht, kontaktieren Sie uns bitte für weitere Informationen).
 
 **Kontakt**
 
-Wir hoffen dass das Projekt helfen kann, die physikalische Struktur von Seen besser zu verstehen.
-Wenn Sie zum Bauvorschlag Fragen, Anmerkungen oder Vorschläge haben, lassen Sie es uns bitte wissen. Besonders freuen wir uns auch über Erfahrungsberichte aus Ihrer Schule.
+Wir hoffen dass das Projekt helfen kann, die physikalische Struktur von Seen Unterricht oder in Forschungsprojekten besser zu verstehen.
+Sollten Sie Fragen, Anmerkungen oder Vorschläge zum Bauvorschlag haben, zögern Sie bitte nicht, uns zu kontaktieren. Wir freuen uns über Erfahrungsberichte und Anregungen aus Ihrer Schule.
 
-Homepage des Autors: https://tu-dresden.de/Members/thomas.petzoldt
+Homepage des Autors: [https://tu-dresden.de/Members/thomas.petzoldt](https://tu-dresden.de/Members/thomas.petzoldt)
