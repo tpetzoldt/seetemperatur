@@ -19,7 +19,7 @@ Die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben find
 
 * Detaillierte [**Bauanleitung**](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
 * Code für einen [Temperatursensor mit Display](https://github.com/tpetzoldt/seetemperatur/tree/main/code/t-sensor-display/) (Arduino-Sketch)
-* Beispieldatensatz: [Temperaturmessungen im Versuchsteich](https://github.com/tpetzoldt/seetemperatur/tree/main/daten) (versuchsteich-jun2023-10min.xlsx)
+* Beispieldatensatz: [Temperaturmessungen im Versuchsteich](https://github.com/tpetzoldt/seetemperatur/raw/refs/heads/main/daten/versuchsteich-jun2023-10min.xlsx) (versuchsteich-jun2023-10min.xlsx)
 
 ## Lizenz
 
@@ -34,7 +34,8 @@ Die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben find
 
 ### Didaktisches Material
 
-* [Unterricht Biologie kompakt](https://www.friedrich-verlag.de/shop/sekundarstufe/biologie/fachzeitschriften/unterricht-biologie) ...(Zeitschriftenheft in Vorbereitung)
+* Unterricht Biologie kompakt (2026). Ökosystem See – Gleichgewicht auf der Kippe. Friedrich Verlag, Hannover, 50. Jahrgang, April 2026, ISSN 0341-5260, [https://t1p.de/ql662](https://t1p.de/ql662)
+
 
 ### Mikrocontroller-Programmierung
 
@@ -42,19 +43,15 @@ Die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben find
 
 ### Forschungsprojekte
 
-Das vom Bundesministerium für Forschung, technologie und Raumfahrt geförderte Projekt "Klimakonform" beschäftigt sich mit den Auswirkungen der Klimaerwärmung und mit Möglichkeiten zur Klimaanpassung. In diesem Zusammenhang sind sogenannte Faktenblätter mit Hintergrundinformationen zur Schichtung in Talsperren und zur Trinkwasserversorgung entstanden. Mehr dazu unter:
+Das vom Bundesministerium für Forschung, Technologie und Raumfahrt geförderte Projekt "Klimakonform" beschäftigt sich mit den Auswirkungen der Klimaerwärmung und mit Möglichkeiten zur Klimaanpassung. In diesem Zusammenhang sind sogenannte Faktenblätter mit Hintergrundinformationen zur Schichtung in Talsperren und zur Trinkwasserversorgung entstanden. Mehr dazu unter:
 
 * [https://klimakonform.uw.tu-dresden.de/](https://klimakonform.uw.tu-dresden.de/) (Projektseite)
 * Faktenblatt Talsperren: Schichtung [pdf 0,3 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_01_schichtung.pdf)
 * Faktenblatt Talsperren: Klimawandel [pdf 0,6 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_02_klimatrend.pdf)
 * Faktenblatt Talsperre: Bewirtschaftung [pdf 0,4 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_03_management.pdf)
 
-### Homepage des Autors
+----
+
+**Homepage des Autors**
 
 * [https://tu-dresden.de/Members/thomas.petzoldt](https://tu-dresden.de/Members/thomas.petzoldt)
-
-
-### Literatur
-
-* ...
-
