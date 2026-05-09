@@ -5,7 +5,7 @@ Eine Do-It-Yourself (DIY)-Sonde zur Erfassung der thermischen Schichtung
 ## Projektseite für eine Selbstbau-Temperatursonde zur Erfassung der Schichtung von Seen
 
 Dieses Repository enthält ergänzendes Material zum Bauvorschlag "Temperatursonde für Seen" aus dem Zeitschriftenartikel in "Unterricht Biologie kompakt". 
-Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben finden Sie im Zeitschriftenartikel (in Vorbereitung).
+Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben finden Sie im Zeitschriftenartikel.
 
 ## Bauanleitung und Programmcode
 
@@ -15,7 +15,7 @@ Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hint
 
 ## Daten
 
-* [Temperaturmessungen im Versuchsteich](daten/) (versuchsteich-jun2023-10min.xlsx)
+* [Temperaturmessungen im Versuchsteich](https://github.com/tpetzoldt/seetemperatur/raw/refs/heads/main/daten/versuchsteich-jun2023-10min.xlsx) (versuchsteich-jun2023-10min.xlsx)
 
 ## Lizenz
 
@@ -30,11 +30,16 @@ Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hint
 
 ### Didaktisches Material
 
-Unterricht Biologie kompakt ...(Zeitschriftenheft in Vorbereitung)
+
+Unterricht Biologie kompakt (2026). Ökosystem See – Gleichgewicht auf der Kippe. Friedrich Verlag, Hannover, 50. Jahrgang, April 2026, ISSN 0341-5260, [https://t1p.de/ql662](https://t1p.de/ql662)
+
+<!--
+https://www.friedrich-verlag.de/friedrich-plus/sekundarstufe/biologie/methoden-konzepte/okosystem-see-gleichgewicht-auf-der-kippe-22991
+-->
 
 ### Mikrocontroller-Programmierung
 
-* Arduino-Programmierungebung: https://www.arduino.cc/
+* Arduino-Programmierungebung: [https://www.arduino.cc/](https://www.arduino.cc/)
 
 ### Forschungsprojekte
 
