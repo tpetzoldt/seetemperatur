@@ -9,7 +9,7 @@ Das Repository beschränkt sich auf die technischen Aspekte, die fachlichen Hint
 
 ## Bauanleitung und Programmcode
 
-* Detaillierte [Bauanleitung](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
+* [**Detaillierte Bauanleitung**](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
 * Code für [Temperatursensor mit Display](code/t-sensor-display/) (Arduino-Sketch)
 * Code für [Temperatursensor mit Display und WiFi](code/t-sensor-display-wifi/) (Arduino-Sketch)
 
@@ -51,5 +51,8 @@ Das vom Bundesministerium für Forschung, technologie und Raumfahrt geförderte 
 * Faktenblatt Talsperre: Bewirtschaftung [pdf 0,4 MB](https://klimakonform.uw.tu-dresden.de/images/pdf/klimakonform_faktenblatt_talsperren_03_management.pdf)
 
 * Homepage des Autors https://tu-dresden.de/Members/thomas.petzoldt
+
+2026-05-17
+
 
 
