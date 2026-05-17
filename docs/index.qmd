@@ -17,7 +17,7 @@ Die fachlichen Hintergründe, didaktischen Empfehlungen und Arbeitsaufgaben find
 
 ## Bauanleitung, Programmcode und Beispieldatensatz
 
-* Detaillierte [**Bauanleitung**](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
+* [**Detaillierte Bauanleitung**](https://tpetzoldt.github.io/seetemperatur/bauanleitung.html)
 * Code für einen [Temperatursensor mit Display](https://github.com/tpetzoldt/seetemperatur/tree/main/code/t-sensor-display/) (Arduino-Sketch)
 * Beispieldatensatz: [Temperaturmessungen im Versuchsteich](https://github.com/tpetzoldt/seetemperatur/raw/refs/heads/main/daten/versuchsteich-jun2023-10min.xlsx) (versuchsteich-jun2023-10min.xlsx)
 
@@ -55,3 +55,5 @@ Das vom Bundesministerium für Forschung, Technologie und Raumfahrt geförderte 
 **Homepage des Autors**
 
 * [https://tu-dresden.de/Members/thomas.petzoldt](https://tu-dresden.de/Members/thomas.petzoldt)
+
+Stand 2026-05-17

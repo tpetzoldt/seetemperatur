@@ -9,22 +9,22 @@ embed-resources: true
 
 ## Einführung
 
-Im Folgenden wird eine Messsonde beschrieben, mit der die Temperaturschichtung in einem See oder Teich gemessen werden kann. Die Temperaturschichtung beeinflusst die Sauerstoffversorgung in tieferen Schichten (Hypolimnion) und die Nährstoffverteilung. Das Verständnis dieser Prozesse ist zentral für die Gewässerökologie.
+Im Folgenden wird eine Messsonde beschrieben, mit der die Temperaturschichtung in einem See oder Teich gemessen werden kann. Die Temperaturschichtung beeinflusst die Sauerstoffversorgung in tieferen Schichten (Hypolimnion) und die Nährstoffverteilung.
+Das Verständnis dieser Prozesse ist zentral für die Gewässerökologie.
 
 Es handelt sich um einen Schulprojekt für die gymnasiale Oberstufe.
 Im Prinzip  ähnelt der Versuchsaufbau einem digitalen Thermometer, wie es zum Beispiel in der Küche verwendet werden kann.
 Der Hauptunterschied besteht darin, dass der Temperatursensor mit einem längeren Kabel (3m, 10m oder länger) mit der Mess- und Anzeigeeinheit verbunden wird.
 Das Kabel wird mit wasserfestem Klebestreifen in 20 oder 50cm-Abständen markiert, so dass man direkt in verschiedenen Tiefen messen kann, ohne das Wasser mit einem Wasserschöpfer nach oben holen zu müssen.
 
-Im Projekt sollen unterschiedliche Fähigkeiten geschult werden: Programmieren, 
-etwas Elektronik, handwerkliches Geschick und am Ende natürlich die Gewässerökologie.
+Im Projekt sollen unterschiedliche Fähigkeiten geschult werden: Programmieren, etwas Elektronik, handwerkliches Geschick und am Ende natürlich die Gewässerökologie.
 
 Das Messen der Temperatur gehört zu den Standardprojekten der Elektronikbastelszene mit einer unzähligen Menge Anleitungen und Videos.
 Trotzdem bietet das Projekt einige Herausforderungen, deshalb ist es bewusst möglichst einfach angelegt.
 Es werden nur wenige Bauteile benötigt, es sind nur sehr wenige Lötstellen und als Gehäuse nutzen wir ein Stück Plexiglasrohr.
 Natürlich kann man vieles besser machen. 
 
-Andererseits lassen sich nicht alle Klippen vermeiden, insbesondere das Einrichten der Entwicklungsumgebung, der Umgang mit dem Lötkolben und der Bau eines einfachen Gehäuses.
+Andererseits lassen sich nicht alle Klippen vermeiden: Einrichten der Entwicklungsumgebung, Umgang mit dem Lötkolben, Bau eines einfachen Gehäuses.
 Je nach Vorkenntnissen ist es sinnvoll, Rat und Kooperationen zu suchen, z.B. beim Informatiklehrer, einer Elektronik- und Robotik-Arbeitsgemeinschaft oder einem [**FabLab bzw. Makerspace**](https://de.wikipedia.org/wiki/FabLab).
 
 **Sicherheitshinweise**
@@ -59,7 +59,7 @@ Je nach Vorkenntnissen ist es sinnvoll, Rat und Kooperationen zu suchen, z.B. be
 * Feine Säge zum Schneiden des Plexiglasrohrs
 * Maßband für die Markierung des Kabels
 * optional: Multimeter
-* optional: 47Ω Widerstand (mindestens 0,5 W) für stabile Stromversorgung.
+* optional: 47Ω Widerstand (mindestens 0,5 W) für stabilere Stromversorgung
 
 
 ### Anlöten der Stiftleisten
@@ -73,9 +73,9 @@ Für das Projekt verwenden wir ein Mikrocontroller-Entwicklungsboard (MC-Board) 
 Das Heltec WiFi Kit 8 wird unverlötet geliefert. Wir müssen deshalb zunächst die Stiftleisten anlöten. Hierzu findet man auf Youtube zahlreiche Video-Anleitungen. Die wichtigsten Pins sind GND, 3.3V und D1.
 Gegebenenfalls ist es sinnvoll, zunächst etwas mit einem Stück Lochrasterplatte zu üben oder sich von einem erfahrenen Bastler helfen zu lassen.
 
-Da man für das Steckbrett ein Mikrocontroller mit Stiftleisten benötigt, für die endgültige Schaltung jedoch ohne, empfiehlt es sich, einen Dreierpack Mikrocontroller zu kaufen: einen für den Steckbrettaufbau, einen für die endgültige Schaltung und einen als Reserve.
+Da man für das Steckbrett einen MCmit Stiftleisten benötigt, für die endgültige Schaltung jedoch ohne, empfiehlt es sich, einen Dreierpack Mikrocontroller zu kaufen: einen für den Steckbrettaufbau, einen für die endgültige Schaltung und einen als Reserve.
 
-Im Prinzip lassen sich auch andere Mikrocontroller verwenden, allerdings benötigt man dann noch ein separates Display und hat etwas mehr Lötarbeit.
+Im Prinzip lassen sich auch andere MCs verwenden, allerdings benötigt man dann noch ein separates Display und hat etwas mehr Lötarbeit.
 
 
 
@@ -84,7 +84,7 @@ Im Prinzip lassen sich auch andere Mikrocontroller verwenden, allerdings benöti
 Zum Programmieren des MC werden zwei unterschiedliche Arten von Software benötigt:
 
 1. Ein Programm zum Erfassen der Daten und zur Ansteuerng des Displays, ein sogenanntes "Sketch".
-2. Eine Programmierumgebung zur Erstellung dieses Programm und um es auf den MC zu schreiben.
+2. Eine Programmierumgebung zur Erstellung dieses Programms und um es auf den MC zu schreiben.
 
 Als Programmierumgebung verwenden wir die frei erhältliche [Arduino IDE](https://www.arduino.cc/en/software/). Beim Arduino handelt es sich um eine Familie von MC-Boards, die besonders einsteigerfreundlich sind.
 Um die Arduino IDE auch für andere MC-Boards zu verwenden, z.B. das WiFi Kit 8, muss eine zusätzliche Boardverwalter-URL eintragen werden (@fig-arduino-install-board). 
@@ -94,7 +94,7 @@ Für das WiFi Kit 8 benötigt man einen Boardverwalter für die ESP 8266-Prozess
 
 Wenn dein Computer das Board beim Anschließen nicht als virtuellen COM-Port erkennt, musst Du den entsprechenden Treiber, den CP210x Driver (von Silicon Labs), manuell installieren. Den aktuellen Treiber für alle Betriebssysteme findest Du direkt beim Hersteller Silicon Labs.
 
-Die Details dazu sind auf diversen Internetseiten zu finden. Bei manchen Online-Händlern ist für den Mikrocontroller eine passende Anleitung oder ein Ebook erhältlich.
+Die Details dazu sind auf diversen Internetseiten zu finden. Bei manchen Online-Händlern ist für den Mikrocontroller eine passende Anleitung oder ein E-Book erhältlich, in dem die Vorgehensweise noch genauer beschrieben ist.
 
 **Vorgehensweise**
 
@@ -128,14 +128,14 @@ Installation der Boardverwalter-URL für ESP 8266-Boards. Anschließend muss man
 
 ### Steckbrettaufbau
 
-Für den Steckbrettaufbau benötigen wir den mit Pinleisten verlöteten MC, drei verschiedenfarbige Kabel, einen Temperatursensor und eine Widerstand.
+Für den Steckbrettaufbau benötigen wir den mit Pinleisten verlöteten MC, drei verschiedenfarbige Kabel, einen Temperatursensor und einen Widerstand.
 
-Wichtig ist, dass die Stifte des MC eine gute elektrische Verbindung haben. Es ist zu empfehlen, die Stifte 
+Wichtig ist, dass die Stifte des MC eine gute elektrische Verbindung haben. Deshalb ist zu empfehlen, die Stifte 
 des MC nicht zu tief ins Steckbrett zu pressen. Gegebenenfalls misst man mit einem Multimeter nach,
 dass am Temperatursensor eine Spannung von 3,3V anliegt. Das USB-Kabel liefert 5V Spannung vom Rechner bzw. aus der Powerbank. Der interne Spannungsregler des Boards konvertiert diese zur Versorgungsspannung von 3,3V für das Board.
 
 Als Temperatursensor verwendet man für den Steckbrettaufbau am besten einen DS18B20-Sensor ohne Kabel.
-Bei einem Sensor mit Kabel muss man zunächst eine Stiftleiste mit 3 Pins anlöten.
+Bei einem Sensor mit Kabel muss man zunächst ebenfalls eine Stiftleiste mit 3 Pins anlöten.
 
 **Wichtig**
 
@@ -151,7 +151,7 @@ Verbindungsleitungen benötigt:
 
 Verbindungskabel sind mit Breadboards im Set erhältlich. Alternativ genügt Klingeldraht mit einem Durchmesser von ca. 0.32mm.
 
-Damit die Signalleitung einen definierten Wert hat, wird zwischen Signalleitung und Pluspol ein sogenannter Pullup-Widerstand von standardmäßig 4,7 kΩ geschaltet. Das WiFi Kit besitzt auch interne Pullup-Widerstände, deshalb funktioniert es auf dem Steckbrett zuweilen auch ohne die 4,7k. Für den Tiefensensor ist der 4,7k-Widerstand unbedingt nötig, da sonst Messaussetzer auftreten können.
+Damit die Signalleitung einen definierten Wert hat, wird zwischen Signalleitung und Pluspol ein sogenannter Pullup-Widerstand von standardmäßig 4,7kΩ geschaltet. Das WiFi Kit besitzt auch interne Pullup-Widerstände, deshalb funktioniert es auf dem Steckbrett zuweilen auch ohne die 4,7kΩ. Für den Tiefensensor ist der 4,7kΩ-Widerstand unbedingt nötig, da sonst wegen des längeren Kabels Messaussetzer auftreten können.
 
  
 ::: {#fig-t-sensor-breadboard  layout-ncol=2 layout-valign="bottom"}
@@ -171,19 +171,19 @@ Nun verbinden wir, falls noch nicht geschehen, das MC-Board über ein USB-Kabel 
 1. Herunterladen des Sketches [`t-sensor-display.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code) und Abspeichern auf dem Computer
 2. Öffnen des Sketches in der Arduino IDE 
 3. Verbinden des Boards über USB mit dem Computer
-4. Einstellen des COM-Ports (der mit USB verbunden ist) und Auswahl des Boards (Generic ESP8266 Module)
+4. Einstellen des COM-Ports (der mit USB verbunden ist) und Auswahl des Boards "**Generic ESP8266 Module**".
 5. Hochladen des Messprogramms über: Sketch -- Hochladen
 
-Auch das Display sollte einen Temperaturwert anzeigen. 
+Das Display sollte jetzt einen Temperaturwert anzeigen. 
 Wenn es nichts oder "No Sensor" anzeigt, dann kurz das USB-Kabel trennen und noch einmal versuchen. Falls es dann noch immer "No Sensor" anzeigt, bitte die elektrischen Verbindungen nachprüfen und ggf. mit dem Multimeter nachmessen.
 
 Zur Fehlersuche kann man die Messwerte auch im Seriellen Monitor (Terminal) der Arduino IDE überprüfen.
 
-**Vorgehensweise**
+**Vorgehensweise Serieller Monitor**
 
-1. Stellen Sie sicher, dass das Heltec Board über das USB-Kabel mit Ihrem Computer verbunden ist.
-2. Klicken Sie in der Arduino IDE oben rechts auf das Lupen-Symbol (Serieller Monitor).
-3. Wählen Sie in der Dropdown-Liste des Seriellen Monitors die korrekte Baudrate aus. Sie muss mit der im Sketch festgelegten Rate übereinstimmen, aktuell 9600.
+1. Stelle sicher, dass das Heltec Board über das USB-Kabel mit dem Computer verbunden ist.
+2. Klicke in der Arduino IDE oben rechts auf das Lupen-Symbol (Serieller Monitor).
+3. Wähle in der Dropdown-Liste des Seriellen Monitors die korrekte Baudrate aus. Sie muss mit der im Sketch festgelegten Rate übereinstimmen, aktuell 9600.
 4. Neustart des Mikrocontrollers: Drücke den Reset-Knopf auf dem Heltec-Board oder ziehe kurz das USB-Kabel ab und stecke es wieder ein. Dies ist nötig, um die Ausgabe im Terminal zu starten.
 5. Wenn alles korrekt läuft, sollten die fortlaufend gemessenen Temperaturwerte (z.B. Temperatur: 18.50 C) im Terminal angezeigt werden.
     
@@ -293,11 +293,11 @@ Als robuste Hardware-Lösung kann man zwischen 3.3 V und Minuspol einen Widersta
 **Erweiterte Sketches**
 
 * WLAN-Accesspoint-Betrieb zur Datenausgabe: Der Mikrocontroller stellt ein eigenes WLAN-Netzwerk bereit, um die Daten an andere Geräte zu senden ([`t-sensor-display-wifi.ino`](https://github.com/tpetzoldt/seetemperatur/tree/main/code))
-* Interne Datenloggerfunktion des Mikrocontrollers (falls dazu Bedarf besteht, kontaktieren Sie uns bitte für weitere Informationen).
+* Interne Datenloggerfunktion des Mikrocontrollers (falls dazu Bedarf besteht, kontaktiere uns bitte für weitere Informationen).
 
 **Kontakt**
 
 Wir hoffen dass das Projekt helfen kann, die physikalische Struktur von Seen Unterricht oder in Forschungsprojekten besser zu verstehen.
 Sollten Sie Fragen, Anmerkungen oder Vorschläge zum Bauvorschlag haben, zögern Sie bitte nicht, uns zu kontaktieren. Wir freuen uns über Erfahrungsberichte und Anregungen aus Ihrer Schule.
 
-Homepage des Autors: [https://tu-dresden.de/Members/thomas.petzoldt](https://tu-dresden.de/Members/thomas.petzoldt)
+Stand 2026-05-17, Homepage des Autors: [https://tu-dresden.de/Members/thomas.petzoldt](https://tu-dresden.de/Members/thomas.petzoldt)

@@ -2,7 +2,7 @@
  - DS18B20 temperature sensor 
  - Board: Heltec 8266 WiFi Kit 8 with Display or compatible
  - WiFi enabled:
-    -  SSID: Sensor
+    - SSID: Sensor
     - no password
     - IP http://192.168.4.1 (http, not https!)
 ***************************************************************/
@@ -74,7 +74,7 @@ void setup() {
   u8g2.begin();
   u8g2.clearBuffer();                  // clear the internal memory
   u8g2.setFont(u8g2_font_crox3hb_tr);  // 12 pixel height
-  u8g2.drawStr(4, 14, "T-Sensor");
+  u8g2.drawStr(4, 14, "T-Sensor + WiFi");
   u8g2.sendBuffer();
   delay(2000);
 
@@ -122,7 +122,7 @@ void loop() {
       Serial.print("Temperature Celsius: ");
       Serial.println(tempC);
       temperatureC = String(tempC, 1);
-      u8g2.drawStr(20, 30, temperatureC.c_str());
+      u8g2.drawStr(4, 30, temperatureC.c_str());
       u8g2.setFont(u8g2_font_unifont_t_symbols);
       u8g2.drawUTF8(100, 30, "°C");
     }
